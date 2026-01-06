@@ -17,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const HoemScreenBody(),
     Center(child: Text('Search Page')),
-
   ];
 
   @override
@@ -27,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: kPrimaryColorsTow,
-        selectedItemColor: Colors.black,
+        selectedItemColor: const Color.fromARGB(255, 255, 0, 0),
         selectedFontSize: 0,
 
         currentIndex: _currentIndex,
