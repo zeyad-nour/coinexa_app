@@ -1,3 +1,4 @@
+import 'package:coinexa_app/features/details/presentation/view/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
 import 'package:flutter/material.dart';
 
@@ -6,10 +7,13 @@ class DetailsScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      body: Stack(children: [ 
-        BackgrounPageDetails()
-      ],),
+    return Scaffold(
+      body: Stack(
+        children: [
+          BackgrounPageDetails(),
+          Positioned(top: 60, left: 20, child: BackIconWidget()),
+        ],
+      ),
     );
   }
 }
