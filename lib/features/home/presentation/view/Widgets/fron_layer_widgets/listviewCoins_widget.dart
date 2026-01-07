@@ -1,6 +1,8 @@
 // ignore_for_file: unnecessary_import, deprecated_member_use
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/details/presentation/view/details_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,12 +43,15 @@ class ListviewcoinsWidget extends StatelessWidget {
           child: ListTile(
             leading: ClipRRect(
               borderRadius: BorderRadius.circular(50),
-              child: Image.network(
-                imagecoin,
+              child: CachedNetworkImage(
+                imageUrl: imagecoin,
                 width: 45,
                 height: 45,
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => Icon(Icons.error),
+                placeholder: (context, url) =>
+                    SizedBox(width: 20, height: 20, child: Lodaingwidget()),
+                errorWidget: (context, url, error) =>
+                    const Icon(Icons.error, color: Colors.red),
               ),
             ),
             title: Text(title, style: Style.TextStyle18.copyWith(fontSize: 18)),
