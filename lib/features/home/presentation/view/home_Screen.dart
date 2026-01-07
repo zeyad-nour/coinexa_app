@@ -1,4 +1,6 @@
-import 'package:coinexa_app/features/home/presentation/base_home_screen.dart';
+// ignore_for_file: file_names
+
+import 'package:coinexa_app/features/home/presentation/view/Widgets/backgroundWidgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold( 
       body: Column(children: [ 
-        BaseHomeScreen()
+        Backgroundwidgets()
       ],),
     );
   }

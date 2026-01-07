@@ -1,4 +1,4 @@
-import 'package:coinexa_app/features/home/presentation/home_Screen.dart';
+import 'package:coinexa_app/features/home/presentation/view/home_Screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,3 +14,4 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
   }
 }
+   

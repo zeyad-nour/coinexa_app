@@ -1,11 +1,17 @@
+// ignore_for_file: constant_identifier_names
+
+import 'package:flutter/material.dart';
+
 abstract class Style {
-  static const TextStyle14 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
+  static const HomeTextStyle = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
   );
-  static const TextStyle16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
+  static const TextStyle25 = TextStyle(
+    fontSize: 25,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
   );
   static const TextStyle18 = TextStyle(
     fontSize: 18,
