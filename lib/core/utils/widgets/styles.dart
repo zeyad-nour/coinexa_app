@@ -18,10 +18,6 @@ abstract class Style {
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
-  static const TextStyle20 = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.normal,
-  );
   static const headTitle_TextStyle = TextStyle(
     color: pTextColorDetailsPage,
     fontWeight: FontWeight.w600,

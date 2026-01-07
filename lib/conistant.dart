@@ -10,3 +10,4 @@ const pTextColorDetailsPage = Color(0xff191C32);
 const colorRate = Color(0xff9395A4);
 const dropDownRateColor = Color(0xffFF6464);
 const drowpUpRateColor = Color(0xff5FC88F);
+const colorLinechartofgraph = Color(0xffF04086);

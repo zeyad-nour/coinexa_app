@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_import
+// ignore_for_file: unnecessary_import, deprecated_member_use
 
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
