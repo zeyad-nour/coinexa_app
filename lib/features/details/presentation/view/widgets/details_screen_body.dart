@@ -38,7 +38,7 @@ class DetailsScreenBody extends StatelessWidget {
               iconRate: Icon(Icons.arrow_drop_up_outlined),
             ),
           ),
-          Positioned(top: 300, left: 20, right: 20, child: CryptoLineChart()),
+          Positioned(top: 280, left: 20, right: 20, child: CryptoLineChart()),
           Positioned(
             top: 600,
             left: 20,
