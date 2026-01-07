@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages
 
 import 'package:bloc/bloc.dart';
 import 'package:coinexa_app/features/home/data/Model/coins_model/coins_model.dart';

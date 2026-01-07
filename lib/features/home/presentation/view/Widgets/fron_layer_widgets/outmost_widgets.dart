@@ -20,6 +20,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
     context.read<HomeCubitCubit>().featchTrending();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width,
@@ -76,7 +77,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                         subtitle: coin.symbol?.toUpperCase() ?? '',
                         praic: coin.currentPrice?.toDouble() ?? 0,
                         rate: coin.priceChangePercentage24h?.toDouble() ?? 0,
-                        lenght: coins.length, // مش ضروري هنا
+                        lenght: 20,
                       );
                     },
                   );

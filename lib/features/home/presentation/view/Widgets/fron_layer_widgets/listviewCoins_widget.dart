@@ -30,7 +30,7 @@ class ListviewcoinsWidget extends StatelessWidget {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
 
-      itemCount: lenght,
+      itemCount: 1,
       itemBuilder: (context, index) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
