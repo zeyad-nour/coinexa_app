@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_import
 
 import 'package:coinexa_app/conistant.dart';
-import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

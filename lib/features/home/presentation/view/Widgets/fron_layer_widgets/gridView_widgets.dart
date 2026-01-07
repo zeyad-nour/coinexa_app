@@ -11,7 +11,14 @@ class GridviewWidgets extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 30,
-      color: kPrimaryColors,
+
+      decoration: BoxDecoration(
+        color: kPrimaryColors,
+        borderRadius: BorderRadius.horizontal(
+          left: Radius.circular(50),
+          right: Radius.circular(50),
+        ),
+      ),
       child: GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
