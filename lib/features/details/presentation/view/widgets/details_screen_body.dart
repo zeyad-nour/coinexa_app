@@ -3,6 +3,7 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun
 import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/left_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/price_crypto_widget.dart';
+import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreenBody extends StatelessWidget {
@@ -25,6 +26,14 @@ class DetailsScreenBody extends StatelessWidget {
             top: 130,
             left: 120,
             child: Center(child: PriceCryptoWidget(price: "32,128,800")),
+          ),
+          Positioned(
+            top: 180,
+            left: 180,
+            child: RateWidget(
+              rate: "2.5",
+              iconRate: Icon(Icons.arrow_drop_up_outlined),
+            ),
           ),
         ],
       ),
