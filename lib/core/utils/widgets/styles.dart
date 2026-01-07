@@ -27,4 +27,9 @@ abstract class Style {
     fontWeight: FontWeight.w600,
     fontSize: 17,
   );
+  static const priceCrypto_TextStyle = TextStyle(
+    color: pTextColorDetailsPage,
+    fontWeight: FontWeight.w700,
+    fontSize: 32,
+  );
 }
