@@ -27,7 +27,7 @@ class ListviewcoinsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-physics: NeverScrollableScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
 
       itemCount: lenght,
       itemBuilder: (context, index) {
@@ -35,37 +35,53 @@ physics: NeverScrollableScrollPhysics(),
           color: kPrimaryColors,
           elevation: 0,
 
-          child: ListTile(
-            leading: Container(
-              width: 50,
-              height: 40,
-              decoration: BoxDecoration(
-                color: kPrimaryColors,
-                borderRadius: BorderRadius.circular(50),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(60),
+            splashColor: const Color.fromARGB(
+              255,
+              255,
+              153,
+              187,
+            ).withOpacity(0.2),
+
+            onTap: () {
+              print("Card Clicked");
+            },
+            child: ListTile(
+              leading: Container(
+                width: 50,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: kPrimaryColors,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Image.asset(imagecoin),
               ),
-              child: Image.asset(imagecoin),
-            ),
-            title: Text(title, style: Style.TextStyle18.copyWith(fontSize: 20)),
-            subtitle: Text(subtitle),
-            trailing: Column(
-              children: [
-                Text(
-                  "$praic",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 17,
-                    color: pTextColor,
+              title: Text(
+                title,
+                style: Style.TextStyle18.copyWith(fontSize: 20),
+              ),
+              subtitle: Text(subtitle),
+              trailing: Column(
+                children: [
+                  Text(
+                    "$praic",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 17,
+                      color: pTextColor,
+                    ),
                   ),
-                ),
-                Text(
-                  "$rate%",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: pTextColor,
+                  Text(
+                    "$rate%",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: pTextColor,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );
