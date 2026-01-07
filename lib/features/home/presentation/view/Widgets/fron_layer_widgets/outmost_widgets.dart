@@ -30,33 +30,37 @@ class OutmostWidgets extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(flex: 1, child: GridviewWidgets()),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: Text(
-              "Trending",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: MediaQuery.sizeOf(context).height * 0.2,
+              child: GridviewWidgets(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                "Trending",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-          ),
 
-          Expanded(
-            flex: 3,
-            child: ListviewcoinsWidget(
+            ListviewcoinsWidget(
               imagecoin: AssetsData.bitcoin,
               rate: 2.0,
               praic: 32128.80,
               subtitle: "BTC",
               title: "Bitcoin",
+              lenght: 20,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

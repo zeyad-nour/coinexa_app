@@ -11,6 +11,7 @@ class ListviewcoinsWidget extends StatelessWidget {
   final String subtitle;
   final double praic;
   final double rate;
+  final int lenght;
 
   const ListviewcoinsWidget({
     super.key,
@@ -19,12 +20,16 @@ class ListviewcoinsWidget extends StatelessWidget {
     required this.subtitle,
     required this.praic,
     required this.rate,
+    required this.lenght,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      shrinkWrap: true,
+physics: NeverScrollableScrollPhysics(),
+
+      itemCount: lenght,
       itemBuilder: (context, index) {
         return Card(
           color: kPrimaryColors,

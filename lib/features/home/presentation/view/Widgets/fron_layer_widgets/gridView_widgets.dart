@@ -20,6 +20,8 @@ class GridviewWidgets extends StatelessWidget {
         ),
       ),
       child: GridView(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 4,
