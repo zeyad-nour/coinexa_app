@@ -1,5 +1,6 @@
 import 'package:coinexa_app/features/details/presentation/view/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
+import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreenBody extends StatelessWidget {
@@ -12,6 +13,11 @@ class DetailsScreenBody extends StatelessWidget {
         children: [
           BackgrounPageDetails(),
           Positioned(top: 60, left: 20, child: BackIconWidget()),
+          Positioned(
+            top: 80,
+            left: 150,
+            child: HeadTitleWidget(headTitle: "Etherium (ETH)"),
+          ),
         ],
       ),
     );

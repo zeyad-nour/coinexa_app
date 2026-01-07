@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/material.dart';
 
 abstract class Style {
@@ -21,8 +22,9 @@ abstract class Style {
     fontSize: 20,
     fontWeight: FontWeight.normal,
   );
-  static const TextStyle30 = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.normal,
+  static const headTitle_TextStyle = TextStyle(
+    color: pTextColorDetailsPage,
+    fontWeight: FontWeight.w600,
+    fontSize: 17,
   );
 }
