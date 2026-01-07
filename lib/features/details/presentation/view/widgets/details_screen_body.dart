@@ -1,5 +1,7 @@
+import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
+import 'package:coinexa_app/features/details/presentation/view/widgets/buttom_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/cryptoLineChart.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/left_icon_widget.dart';
@@ -37,6 +39,24 @@ class DetailsScreenBody extends StatelessWidget {
             ),
           ),
           Positioned(top: 300, left: 20, right: 20, child: CryptoLineChart()),
+          Positioned(
+            top: 600,
+            left: 20,
+            child: ButtonWidget(
+              colortext: sTextColorDetailsPage,
+              text: "Set Alert",
+              colorbutton: Color(0xffFAFBFB),
+            ),
+          ),
+          Positioned(
+            top: 600,
+            right: 20,
+            child: ButtonWidget(
+              colortext: kPrimaryColorsTow,
+              text: "Set Alert",
+              colorbutton: pTextColorDetailsPage,
+            ),
+          ),
         ],
       ),
     );
