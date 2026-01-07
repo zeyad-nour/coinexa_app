@@ -4,5 +4,9 @@ class AssetsData{
     static const compare = 'assets/images/compare.png';
     static const watchlists = 'assets/images/watchlists.png';
     static const pricealert = 'assets/images/pricealert.png';
+    static const achain = 'assets/images/achain.png';
+    static const bitcoin = 'assets/images/bitcoin.png';
+    static const neo = 'assets/images/neo.png';
+
 
 }

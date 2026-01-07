@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:coinexa_app/conistant.dart';
-import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:flutter/material.dart';
 
 class OptionsCardWidgets extends StatelessWidget {
@@ -34,8 +33,8 @@ class OptionsCardWidgets extends StatelessWidget {
             height: 60,
             child: Image.asset(
               imagename,
-              width: 30,
-              height: 30,
+              width: 20,
+              height: 20,
               fit: BoxFit.contain,
             ),
           ),

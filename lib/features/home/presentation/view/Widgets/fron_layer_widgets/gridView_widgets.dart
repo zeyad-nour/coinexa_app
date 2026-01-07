@@ -1,33 +1,39 @@
+import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/options_card_widgets.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class GridviewWidgets extends StatelessWidget {
   const GridviewWidgets({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 4,
-        crossAxisSpacing: 20,
+    return Container(
+      width: double.infinity,
+      height: 30,
+      color: kPrimaryColors,
+      child: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 4,
+          crossAxisSpacing: 0,
 
-        mainAxisSpacing: 10,
+          mainAxisSpacing: 20,
+        ),
+
+        children: [
+          OptionsCardWidgets(
+            imagename: AssetsData.watchlists,
+            title: "Calculator",
+          ),
+          OptionsCardWidgets(imagename: AssetsData.compare, title: "Compare"),
+          OptionsCardWidgets(imagename: AssetsData.convert, title: "Convert"),
+          OptionsCardWidgets(
+            imagename: AssetsData.pricealert,
+            title: "pricealert",
+          ),
+        ],
       ),
-
-      children: [
-        OptionsCardWidgets(
-          imagename: AssetsData.watchlists,
-          title: "Calculator",
-        ),
-        OptionsCardWidgets(imagename: AssetsData.compare, title: "Compare"),
-        OptionsCardWidgets(imagename: AssetsData.convert, title: "Convert"),
-        OptionsCardWidgets(
-          imagename: AssetsData.pricealert,
-          title: "pricealert",
-        ),
-      ],
     );
   }
 }

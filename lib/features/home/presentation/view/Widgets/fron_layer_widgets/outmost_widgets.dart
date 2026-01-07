@@ -1,6 +1,8 @@
 // ignore: unnecessary_import
 import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/gridView_widgets.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/listviewCoins_widget.dart';
 import 'package:flutter/material.dart';
 
 class OutmostWidgets extends StatelessWidget {
@@ -29,9 +31,31 @@ class OutmostWidgets extends StatelessWidget {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: GridviewWidgets()),
-         
+          Expanded(flex: 1, child: GridviewWidgets()),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            child: Text(
+              "Trending",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+
+          Expanded(
+            flex: 3,
+            child: ListviewcoinsWidget(
+              imagecoin: AssetsData.bitcoin,
+              rate: 2.0,
+              praic: 32128.80,
+              subtitle: "BTC",
+              title: "Bitcoin",
+            ),
+          ),
         ],
       ),
     );
