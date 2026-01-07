@@ -1,10 +1,10 @@
 // ignore_for_file: file_names
 
-import 'package:coinexa_app/features/home/presentation/view/Widgets/TextWidgetTow.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/Text_Widget.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/image_widget.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/learnMoreButtom_widget.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/topIcon_widet.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/TextWidgetTow.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/Text_Widget.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/image_widget.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/learnMoreButtom_widget.dart';
+import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/topIcon_widet.dart';
 import 'package:flutter/material.dart';
 
 class Backgroundwidgets extends StatelessWidget {

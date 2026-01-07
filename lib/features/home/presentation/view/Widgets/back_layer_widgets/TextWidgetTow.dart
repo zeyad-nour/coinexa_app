@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
