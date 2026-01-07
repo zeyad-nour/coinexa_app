@@ -1,17 +1,28 @@
-// ignore: unnecessary_import
+// ignore_for_file: deprecated_member_use
+
 import 'package:coinexa_app/conistant.dart';
-import 'package:coinexa_app/core/utils/widgets/assets.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/gridView_widgets.dart';
+import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cubit_cubit.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/listviewCoins_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class OutmostWidgets extends StatelessWidget {
+class OutmostWidgets extends StatefulWidget {
   const OutmostWidgets({super.key});
 
   @override
+  State<OutmostWidgets> createState() => _OutmostWidgetsState();
+}
+
+class _OutmostWidgetsState extends State<OutmostWidgets> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomeCubitCubit>().featchTrending();
+  }
+
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.widthOf(context),
+      width: MediaQuery.sizeOf(context).width,
       height: MediaQuery.sizeOf(context).height * 0.8,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -19,14 +30,11 @@ class OutmostWidgets extends StatelessWidget {
           topRight: Radius.circular(40),
         ),
         color: kPrimaryColors,
-        border: Border.all(style: BorderStyle.none),
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            blurRadius: 150,
-
-            spreadRadius: 0.001,
-            offset: Offset(2, 25),
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 50,
+            offset: Offset(0, 25),
           ),
         ],
       ),
@@ -34,11 +42,7 @@ class OutmostWidgets extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: double.infinity,
-              height: MediaQuery.sizeOf(context).height * 0.2,
-              child: GridviewWidgets(),
-            ),
+            // Trending Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               child: Text(
@@ -51,13 +55,35 @@ class OutmostWidgets extends StatelessWidget {
               ),
             ),
 
-            ListviewcoinsWidget(
-              imagecoin: AssetsData.bitcoin,
-              rate: 2.0,
-              praic: 32128.80,
-              subtitle: "BTC",
-              title: "Bitcoin",
-              lenght: 20,
+            // هنا نستخدم BlocBuilder عشان نجيب البيانات من Cubit
+            BlocBuilder<HomeCubitCubit, HomeCubitState>(
+              builder: (context, state) {
+                if (state is HomeCubitLoding) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (state is HomeCubitFailure) {
+                  return Center(child: Text(state.errorMessage));
+                } else if (state is HomeCubitSuccess) {
+                  final coins = state.coinsList;
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: coins.length,
+                    itemBuilder: (context, index) {
+                      final coin = coins[index];
+                      return ListviewcoinsWidget(
+                        imagecoin: coin.image ?? '',
+                        title: coin.name ?? '',
+                        subtitle: coin.symbol?.toUpperCase() ?? '',
+                        praic: coin.currentPrice?.toDouble() ?? 0,
+                        rate: coin.priceChangePercentage24h?.toDouble() ?? 0,
+                        lenght: coins.length, // مش ضروري هنا
+                      );
+                    },
+                  );
+                } else {
+                  return SizedBox();
+                }
+              },
             ),
           ],
         ),

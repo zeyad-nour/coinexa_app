@@ -10,7 +10,12 @@ class ButtonWidget extends StatelessWidget {
   final Color colortext;
   final String text;
 
-  const ButtonWidget({super.key, required this.colorbutton, required this.colortext, required this.text});
+  const ButtonWidget({
+    super.key,
+    required this.colorbutton,
+    required this.colortext,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,7 @@ class ButtonWidget extends StatelessWidget {
       child: TextButton(
         onPressed: () {},
         child: Text(
-         text,
+          text,
           style: Style.headTitle_TextStyle.copyWith(
             color: colortext,
             fontSize: 15,
@@ -38,4 +43,5 @@ class ButtonWidget extends StatelessWidget {
     );
   }
 }
+
 // kPrimaryColorsTow

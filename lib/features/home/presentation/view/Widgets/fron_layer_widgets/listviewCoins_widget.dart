@@ -60,13 +60,22 @@ class ListviewcoinsWidget extends StatelessWidget {
               },
               child: ListTile(
                 leading: Container(
+                
                   width: 50,
                   height: 40,
                   decoration: BoxDecoration(
                     color: kPrimaryColors,
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Image.asset(imagecoin),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.network(
+                      imagecoin,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Icon(Icons.error),
+                    ),
+                  ),
                 ),
                 title: Text(
                   title,

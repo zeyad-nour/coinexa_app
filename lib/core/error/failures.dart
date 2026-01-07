@@ -25,11 +25,11 @@ class ServerFailuer extends Failure {
           dioError.response!.data,
         );
       case DioExceptionType.cancel:
-         return ServerFailuer("You`r Requst was Cancel");
+        return ServerFailuer("You`r Requst was Cancel");
       case DioExceptionType.connectionError:
-         return ServerFailuer("connection Error");
+        return ServerFailuer("connection Error");
       case DioExceptionType.unknown:
-        return   ServerFailuer("Unknown Error");
+        return ServerFailuer("Unknown Error");
     }
   }
 

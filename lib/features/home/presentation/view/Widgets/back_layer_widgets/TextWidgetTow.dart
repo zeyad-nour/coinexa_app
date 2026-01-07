@@ -8,9 +8,6 @@ class Textwidgettow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "Affilate Program",
-      style: Style.TextStyle25
-    );
+    return Text("Affilate Program", style: Style.TextStyle25);
   }
 }
