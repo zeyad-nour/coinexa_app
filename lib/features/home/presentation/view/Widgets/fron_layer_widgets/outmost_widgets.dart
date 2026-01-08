@@ -86,6 +86,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                         subtitle: coin.symbol?.toUpperCase() ?? '',
                         praic: coin.currentPrice ?? 0,
                         rate: coin.priceChangePercentage24h ?? 0,
+                        coinsID: coin.id ?? '',
                       );
                     },
                   );

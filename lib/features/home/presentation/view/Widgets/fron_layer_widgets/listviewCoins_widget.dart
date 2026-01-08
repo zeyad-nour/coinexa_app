@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 class ListviewcoinsWidget extends StatelessWidget {
   final String imagecoin;
   final String title;
+  final String coinsID;
   final String subtitle;
   final double praic;
   final double rate;
@@ -21,7 +22,7 @@ class ListviewcoinsWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.praic,
-    required this.rate,
+    required this.rate, required this.coinsID,
   });
 
   @override
@@ -39,7 +40,7 @@ class ListviewcoinsWidget extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (_) =>
-                    DetailsScreen(price: praic, rate: rate, headtitle: title),
+                    DetailsScreen(price: praic, rate: rate, headtitle: title,coinId: coinsID,),
               ),
             );
           },
