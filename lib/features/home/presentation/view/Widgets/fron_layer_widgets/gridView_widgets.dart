@@ -1,5 +1,6 @@
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
+import 'package:coinexa_app/features/calculate/presentation/view/calculate_screen.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/view/convert_Coins.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/options_card_widgets.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,16 @@ class GridviewWidgets extends StatelessWidget {
         ),
 
         children: [
-          OptionsCardWidgets(
-            imagename: AssetsData.watchlists,
-            title: "Calculator",
+          InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => CalculateScreen()),
+              );
+            },
+            child: OptionsCardWidgets(
+              imagename: AssetsData.watchlists,
+              title: "Calculator",
+            ),
           ),
           OptionsCardWidgets(imagename: AssetsData.compare, title: "Compare"),
           InkWell(
