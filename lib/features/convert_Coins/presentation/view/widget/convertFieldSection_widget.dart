@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
 import 'package:coinexa_app/features/convert_Coins/data/model/convert_model/coinModel.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/mange_state/cubit/convert_cubit_cubit.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/view/widget/coinInfoCard.dart';
@@ -42,10 +44,10 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
   void _convert() {
     if (fromCoin == null || toCoin == null) return;
     context.read<ConvertCubit>().convert(
-          fromCoinId: fromCoin!.id,
-          toCoinId: toCoin!.id,
-          amount: amount,
-        );
+      fromCoinId: fromCoin!.id,
+      toCoinId: toCoin!.id,
+      amount: amount,
+    );
   }
 
   @override
@@ -112,13 +114,22 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
           itemBuilder: (context, index) {
             final coin = coinsList[index];
             return ListTile(
-              leading: Image.network(
-                coin.icon,
-                width: 32,
-                errorBuilder: (context, error, stackTrace) =>
-                    const Icon(Icons.error, size: 32),
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: CachedNetworkImage(
+                  imageUrl: coin.icon,
+                  width: 45,
+                  height: 45,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) =>
+                      SizedBox(width: 20, height: 20, child: Lodaingwidget()),
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.error, color: Colors.red),
+                ),
               ),
-              title: Text('${coin.symbol.toUpperCase()} - \$${coin.usdPrice?.toStringAsFixed(2) ?? '0.00'}'),
+              title: Text(
+                '${coin.symbol.toUpperCase()} - \$${coin.usdPrice?.toStringAsFixed(2) ?? '0.00'}',
+              ),
               subtitle: Text(coin.name),
               onTap: () {
                 onSelected(coin);
