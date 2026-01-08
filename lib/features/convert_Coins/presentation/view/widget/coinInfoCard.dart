@@ -1,3 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/convert_Coins/data/model/convert_model/coinModel.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +22,8 @@ class CoinInputCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: MediaQuery.sizeOf(context).width * 0.92,
+        height: MediaQuery.sizeOf(context).height * 0.15,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.75),
@@ -30,7 +36,7 @@ class CoinInputCard extends StatelessWidget {
               backgroundColor: Colors.white,
               child: Image.network(
                 coin2.icon,
-                width: 24,
+                width: 60,
                 errorBuilder: (context, error, stackTrace) =>
                     const Icon(Icons.error, size: 24),
               ),
@@ -46,29 +52,27 @@ class CoinInputCard extends StatelessWidget {
                       coin2.symbol,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 30,
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Icon(Icons.keyboard_arrow_down, size: 18),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 30,
+                      color: drowpUpRateColor,
+                    ),
                   ],
                 ),
                 Text(
                   coin2.name,
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey.shade700,
-                  ),
+                  style: Style.priceCrypto_TextStyle.copyWith(fontSize: 20),
                 ),
               ],
             ),
             const Spacer(),
             Text(
               value,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
           ],
         ),
