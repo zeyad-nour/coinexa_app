@@ -1,6 +1,6 @@
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/features/details/presentation/mange_state/cubit_chart/chart_mange_cubit.dart';
-import 'package:coinexa_app/features/details/presentation/view/widgets/back_icon_widget.dart';
+import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/buttom_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/cryptoLineChart.dart';

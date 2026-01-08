@@ -13,6 +13,7 @@ class BackIconWidget extends StatelessWidget {
       ),
       width: 66,
       height: 66,
+
       child: IconButton(
         onPressed: () {
           Navigator.of(context).pop();
