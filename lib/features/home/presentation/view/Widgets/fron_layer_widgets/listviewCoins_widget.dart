@@ -37,7 +37,10 @@ class ListviewcoinsWidget extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => DetailsScreen()),
+              MaterialPageRoute(
+                builder: (_) =>
+                    DetailsScreen(price: praic, rate: rate, headtitle: title),
+              ),
             );
           },
           child: ListTile(
@@ -62,14 +65,19 @@ class ListviewcoinsWidget extends StatelessWidget {
                 Text(
                   "\$${praic.toStringAsFixed(2)}",
                   style: TextStyle(
+                    fontSize: 26,
                     fontWeight: FontWeight.bold,
                     color: pTextColor,
                   ),
                 ),
-                Text(
-                  "${rate.toStringAsFixed(2)}%",
-                  style: TextStyle(
-                    color: rate >= 0 ? Colors.green : Colors.red,
+                Expanded(
+                  child: Text(
+                    "${rate.toStringAsFixed(2)}%",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w900,
+                      color: rate >= 0 ? Colors.green : Colors.red,
+                    ),
                   ),
                 ),
               ],

@@ -20,8 +20,8 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 155,
-      height: 55,
+      width: MediaQuery.sizeOf(context).width * 0.37,
+      height: MediaQuery.sizeOf(context).height * 0.05,
       decoration: BoxDecoration(
         color: colorbutton,
         borderRadius: BorderRadius.horizontal(
@@ -35,7 +35,7 @@ class ButtonWidget extends StatelessWidget {
           text,
           style: Style.headTitle_TextStyle.copyWith(
             color: colortext,
-            fontSize: 15,
+            fontSize: 25,
             fontWeight: FontWeight.w700,
           ),
         ),

@@ -41,7 +41,7 @@ class OptionsCardWidgets extends StatelessWidget {
           SizedBox(width: 17),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 19),
+            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 27),
           ),
         ],
       ),

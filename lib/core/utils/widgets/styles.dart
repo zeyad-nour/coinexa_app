@@ -20,8 +20,8 @@ abstract class Style {
   );
   static const headTitle_TextStyle = TextStyle(
     color: pTextColorDetailsPage,
-    fontWeight: FontWeight.w600,
-    fontSize: 17,
+    fontWeight: FontWeight.w900,
+    fontSize: 30,
   );
   static const priceCrypto_TextStyle = TextStyle(
     color: pTextColorDetailsPage,
@@ -31,6 +31,6 @@ abstract class Style {
   static const rateStyle_TextStyle = TextStyle(
     color: colorRate,
     fontWeight: FontWeight.w700,
-    fontSize: 16,
+    fontSize: 25,
   );
 }

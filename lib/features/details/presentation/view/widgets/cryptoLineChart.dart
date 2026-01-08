@@ -3,6 +3,7 @@
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/bottonselectRang.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/selectIteamFram.dart';
+import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -14,14 +15,23 @@ class CryptoLineChart extends StatefulWidget {
 }
 
 class _CryptoLineChartState extends State<CryptoLineChart> {
+  TimeFrame selectedTimeFrame = TimeFrame.week;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BottonselectRang(),
-        const SizedBox(height: 60),
+        BottonselectRang(
+          selectedTimeFrame: selectedTimeFrame,
+          onChanged: (tf) {
+            setState(() {
+              selectedTimeFrame = tf;
+            });
+          },
+        ),
+        const SizedBox(height: 40),
         SizedBox(
-          height: 190,
+          height: MediaQuery.sizeOf(context).height * 0.30,
           child: LineChart(
             LineChartData(
               gridData: FlGridData(show: false),
@@ -29,7 +39,7 @@ class _CryptoLineChartState extends State<CryptoLineChart> {
               borderData: FlBorderData(show: false),
               lineBarsData: [
                 LineChartBarData(
-                  spots: getSpots(),
+                  spots: getSpots(selectedTimeFrame),
                   isCurved: true,
                   color: colorLinechartofgraph,
                   barWidth: 3,
