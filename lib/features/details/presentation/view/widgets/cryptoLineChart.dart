@@ -31,7 +31,6 @@ class _CryptoLineChartState extends State<CryptoLineChart> {
             setState(() {
               selectedTimeFrame = tf;
             });
-            // لما المستخدم يغير الوقت، نعمل reload للبيانات
             cubit.loadChart(coinId: widget.coinID, timeFrame: tf);
           },
         ),

@@ -5,6 +5,7 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun
 import 'package:coinexa_app/features/details/presentation/view/widgets/buttom_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/cryptoLineChart.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
+import 'package:coinexa_app/features/details/presentation/view/widgets/info_Card_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/left_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/price_crypto_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';
@@ -17,23 +18,25 @@ class DetailsScreenBody extends StatelessWidget {
   final double rate;
   final String headtitle;
   final String coinId;
+  final String name;
+  final String imageUrl;
   const DetailsScreenBody({
     super.key,
     required this.price,
     required this.rate,
     required this.headtitle,
     required this.coinId,
+    required this.imageUrl,
+    required this.name,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-      create: (_) => ChartMangeCubit()
-        ..loadChart(
-          coinId: coinId,
-          timeFrame: TimeFrame.week,
-        ),
+        create: (_) =>
+            ChartMangeCubit()
+              ..loadChart(coinId: coinId, timeFrame: TimeFrame.week),
         child: Stack(
           children: [
             BackgrounPageDetails(),
@@ -79,6 +82,16 @@ class DetailsScreenBody extends StatelessWidget {
                 colortext: kPrimaryColorsTow,
                 text: "Set Alert",
                 colorbutton: pTextColorDetailsPage,
+              ),
+            ),
+            Positioned(
+              bottom: 50,
+              left: 20,
+              child: InfoCardWidget(
+                image: imageUrl,
+                namecoin: name,
+                lastprice: price,
+                rat: rate,
               ),
             ),
           ],

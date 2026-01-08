@@ -40,7 +40,7 @@ class ListviewcoinsWidget extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (_) =>
-                    DetailsScreen(price: praic, rate: rate, headtitle: title,coinId: coinsID,),
+                    DetailsScreen(price: praic, rate: rate, headtitle: title,coinId: coinsID, imageUrl: imagecoin, name: title,),
               ),
             );
           },

@@ -5,11 +5,13 @@ class DetailsScreen extends StatelessWidget {
   final double price;
   final double rate;
   final String headtitle;
+  final String name;
   final String coinId;
-  const DetailsScreen({super.key, required this.price, required this.rate, required this.headtitle, required this.coinId});
+  final String imageUrl;
+  const DetailsScreen({super.key, required this.price, required this.rate, required this.headtitle, required this.coinId, required this.imageUrl, required this.name});
 
   @override
   Widget build(BuildContext context) {
-    return DetailsScreenBody(price: price, rate: rate,headtitle:headtitle, coinId: coinId ,);
+    return DetailsScreenBody(price: price, rate: rate,headtitle:headtitle, coinId: coinId, imageUrl: imageUrl, name: '' ,);
   }
 }
