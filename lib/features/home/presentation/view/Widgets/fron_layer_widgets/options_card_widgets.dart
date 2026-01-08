@@ -25,25 +25,30 @@ class OptionsCardWidgets extends StatelessWidget {
           right: Radius.circular(36),
         ),
       ),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.only(left: 10),
-            width: 60,
-            height: 60,
-            child: Image.asset(
-              imagename,
-              width: 20,
-              height: 20,
-              fit: BoxFit.contain,
+      child: InkWell(
+        onTap: () {
+          
+        },
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              width: 60,
+              height: 60,
+              child: Image.asset(
+                imagename,
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-          SizedBox(width: 17),
-          Text(
-            title,
-            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 27),
-          ),
-        ],
+            SizedBox(width: 17),
+            Text(
+              title,
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 27),
+            ),
+          ],
+        ),
       ),
     );
   }
