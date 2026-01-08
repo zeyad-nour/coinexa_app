@@ -11,13 +11,13 @@ class BackIconWidget extends StatelessWidget {
         color: bacgroundIconButtom,
         borderRadius: BorderRadius.circular(100),
       ),
-      width: 56,
-      height: 56,
+      width: 66,
+      height: 66,
       child: IconButton(
         onPressed: () {
           Navigator.of(context).pop();
         },
-        icon: Icon(Icons.arrow_back, size: 27),
+        icon: Icon(Icons.arrow_back, size: 30),
       ),
     );
   }

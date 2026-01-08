@@ -16,7 +16,6 @@ class BachgroundConvert extends StatelessWidget {
             colors: [
               secoundBackgroundColor.withOpacity(0.6),
               secoundBackgroundColor2.withOpacity(0.4),
-
               kPrimaryColors,
               kPrimaryColors,
               secoundBackgroundColor2,
