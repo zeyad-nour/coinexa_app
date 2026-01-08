@@ -1,4 +1,5 @@
 import 'package:coinexa_app/core/utils/api_serves.dart';
+import 'package:coinexa_app/features/convert_Coins/presentation/view/convert_Coins.dart';
 import 'package:coinexa_app/features/home/data/repo/home_repo.dart';
 import 'package:coinexa_app/features/home/data/repo/home_repo_implement.dart';
 import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cubit_cubit.dart';
@@ -28,7 +29,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false, 
         home: Scaffold(
           body: HomeScreen(),
+          
         ),
+        routes: { 
+          "convertpage":(context)=>ConvertCoins()
+        },
       ),
     );
   }

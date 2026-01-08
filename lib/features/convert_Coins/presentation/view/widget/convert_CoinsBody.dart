@@ -1,3 +1,4 @@
+import 'package:coinexa_app/features/convert_Coins/presentation/view/widget/bachground_Convert.dart';
 import 'package:flutter/material.dart';
 
 class ConvertCoinsbody extends StatelessWidget {
@@ -5,6 +6,12 @@ class ConvertCoinsbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold( 
+      body: Stack( 
+        children: [
+          BachgroundConvert()
+        ],
+      ),
+    );
   }
 }
