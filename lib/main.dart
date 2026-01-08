@@ -9,31 +9,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   final HomeRepo homeRepo = HomeRepoImplement(ApiServes(Dio()));
-   MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
- return MultiBlocProvider(
+    return MultiBlocProvider(
       providers: [
         BlocProvider<HomeCubitCubit>(
-          create: (context) => HomeCubitCubit(homeRepo)..featchTrending(),
+          create: (context) =>
+              HomeCubitCubit(HomeRepoImplement(ApiServes(Dio())))
+                ..featchTrending(),
         ),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false, 
-        home: Scaffold(
-          body: HomeScreen(),
-          
-        ),
-        routes: { 
-          "convertpage":(context)=>ConvertCoins()
-        },
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(body: HomeScreen()),
+        routes: {"convertpage": (context) => ConvertCoins()},
       ),
     );
   }

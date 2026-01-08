@@ -2,20 +2,32 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:coinexa_app/features/home/data/Model/coins_model/coins_model.dart';
-import 'package:coinexa_app/features/home/data/repo/home_repo.dart';
+import 'package:coinexa_app/features/home/data/repo/home_repo_implement.dart';
 import 'package:meta/meta.dart';
 
 part 'home_cubit_state.dart';
 
 class HomeCubitCubit extends Cubit<HomeCubitState> {
-  HomeCubitCubit(this.homeRepo) : super(HomeCubitInitial());
-  final HomeRepo homeRepo;
-  Future<void> featchTrending() async {
-    emit(HomeCubitLoding());
-    var Response = await homeRepo.featchTrending();
-    Response.fold(
-      (Failure) => emit(HomeCubitFailure(Failure.errorMessage)),
-      (coins) => emit(HomeCubitSuccess(coins)),
+  final HomeRepoImplement repo;
+
+  HomeCubitCubit(this.repo) : super(HomeCubitInitial());
+
+  /// جلب العملات
+  Future<void> featchTrending({bool isRefresh = false}) async {
+    if (!isRefresh && state is! HomeCubitSuccess) {
+      // اللودنج يظهر فقط عند أول تحميل
+      emit(HomeCubitLoding());
+    }
+
+    final result = await repo.featchTrending();
+
+    result.fold(
+      (failure) => emit(HomeCubitFailure(failure.errorMessage)),
+      (coins) {
+        // ترتيب العملات حسب السعر من الأعلى للأقل
+        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));
+        emit(HomeCubitSuccess(coinsList: coins));
+      },
     );
   }
 }

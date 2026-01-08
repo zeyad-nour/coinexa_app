@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cubit_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TopiconWidet extends StatelessWidget {
   const TopiconWidet({super.key});
@@ -9,13 +11,16 @@ class TopiconWidet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 40,
-      height: 40,
+      width: 50,
+      height: 50,
       decoration: BoxDecoration(
         color: bacgroundIconButtom,
         borderRadius: BorderRadius.circular(400),
       ),
-      child: IconButton(onPressed: () {}, icon: Icon(Icons.linear_scale_sharp)),
+      child: IconButton(onPressed: () { 
+                  context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
+
+      }, icon: Icon(Icons.refresh_outlined)),
     );
   }
 }
