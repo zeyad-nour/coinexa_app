@@ -128,7 +128,7 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
                 ),
               ),
               title: Text(
-                '${coin.symbol.toUpperCase()} - \$${coin.usdPrice?.toStringAsFixed(2) ?? '0.00'}',
+                '${coin.symbol.toUpperCase()} - \$${coin.usdPrice.toStringAsFixed(2)}',
               ),
               subtitle: Text(coin.name),
               onTap: () {

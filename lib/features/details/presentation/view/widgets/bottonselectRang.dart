@@ -17,8 +17,9 @@ class BottonselectRang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      height: MediaQuery.sizeOf(context).height * 0.073,
+      width: MediaQuery.sizeOf(context).width * 0.7,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         color: colorSelectIteamRange,
         borderRadius: BorderRadius.circular(50),

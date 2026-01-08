@@ -21,6 +21,7 @@ class ConvertRepoImpl implements ConvertRepo {
       usdPrice: (json['current_price'] as num).toDouble(),
     )).toList();
   }
+  @override
   Future<List<Coin>> fetchPrices({required List<String> coinIds}) async {
     final ids = coinIds.join(',');
     final data = await api.get(

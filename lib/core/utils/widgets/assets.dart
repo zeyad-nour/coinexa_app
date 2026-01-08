@@ -7,6 +7,6 @@ class AssetsData {
   static const achain = 'assets/images/achain.png';
   static const bitcoin = 'assets/images/bitcoin.png';
   static const neo = 'assets/images/neo.png';
-  static const bimageOne = 'assets/images/im1.png';
+  static const bimageOne = 'assets/images/bim.png';
   static const bimageTow = 'assets/images/im2.png';
 }

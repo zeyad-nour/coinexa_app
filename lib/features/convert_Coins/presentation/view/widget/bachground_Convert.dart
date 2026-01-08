@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/cupertino.dart';
 

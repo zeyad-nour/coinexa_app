@@ -16,10 +16,11 @@ class OptionsCardWidgets extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: 10, right: 10),
       alignment: Alignment.center,
-      width: 90,
+      width: MediaQuery.sizeOf(context).width * 0.4,
       height: 30,
       decoration: BoxDecoration(
         color: kPrimaryColorsTow,
+
         borderRadius: BorderRadius.horizontal(
           left: Radius.circular(36),
           right: Radius.circular(36),
@@ -29,8 +30,8 @@ class OptionsCardWidgets extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.only(left: 10),
-            width: 60,
-            height: 60,
+            width: MediaQuery.sizeOf(context).width * 0.12,
+            height: MediaQuery.sizeOf(context).height * 0.12,
             child: Image.asset(
               imagename,
               width: 20,
@@ -38,10 +39,10 @@ class OptionsCardWidgets extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-          SizedBox(width: 17),
+          SizedBox(width: 5),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 27),
+            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 15),
           ),
         ],
       ),
