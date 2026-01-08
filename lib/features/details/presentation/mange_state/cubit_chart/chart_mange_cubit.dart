@@ -4,8 +4,9 @@ import 'package:coinexa_app/features/details/data/model/chart_Modil.dart';
 import 'package:coinexa_app/features/details/data/repo/chart_repo_Implement.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
 import 'package:dio/dio.dart';
-import 'package:meta/meta.dart';
+
 import 'package:coinexa_app/features/details/data/repo/chart_repo.dart';
+import 'package:flutter/material.dart';
 
 part 'chart_mange_state.dart';
 

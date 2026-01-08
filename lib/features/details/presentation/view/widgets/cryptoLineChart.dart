@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/details/presentation/mange_state/cubit_chart/chart_mange_cubit.dart';
 import 'package:flutter/material.dart';
