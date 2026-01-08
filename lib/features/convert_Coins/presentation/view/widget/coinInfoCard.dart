@@ -29,15 +29,14 @@ class CoinInputCard extends StatelessWidget {
               radius: 22,
               backgroundColor: Colors.white,
               child: Image.network(
-                coin2.icon,  // <- هنا الرابط من API
+                coin2.icon,
                 width: 24,
                 errorBuilder: (context, error, stackTrace) =>
-                    const Icon(Icons.error, size: 24), // لو الصورة فشلت
+                    const Icon(Icons.error, size: 24),
               ),
             ),
             const SizedBox(width: 12),
 
-            /// Coin Info
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,10 +62,7 @@ class CoinInputCard extends StatelessWidget {
                 ),
               ],
             ),
-
             const Spacer(),
-
-            /// Value
             Text(
               value,
               style: const TextStyle(

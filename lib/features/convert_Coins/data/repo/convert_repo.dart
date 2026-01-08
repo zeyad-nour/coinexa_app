@@ -5,4 +5,5 @@ abstract class ConvertRepo {
   Future<List<Coin>> fetchPrices({
     required List<String> coinIds,
   });
+   Future<List<Coin>> fetchAllCoins();
 }
