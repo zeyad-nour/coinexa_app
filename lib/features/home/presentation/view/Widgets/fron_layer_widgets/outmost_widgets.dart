@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:async';
+
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
 import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cubit_cubit.dart';
@@ -19,6 +21,11 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
   @override
   void initState() {
     super.initState();
+    _loadData();
+    Timer.periodic(Duration(seconds: 33), (_) => _loadData());
+  }
+
+  void _loadData() {
     context.read<HomeCubitCubit>().featchTrending();
   }
 
