@@ -4,7 +4,7 @@ import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_w
 import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/Text_Widget.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/image_widget.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/learnMoreButtom_widget.dart';
-import 'package:coinexa_app/features/home/presentation/view/Widgets/back_layer_widgets/refreshIcon_widet.dart';
+import 'package:coinexa_app/core/utils/widgets/refreshIcon_widet.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/outmost_widgets.dart';
 import 'package:flutter/material.dart';
 
