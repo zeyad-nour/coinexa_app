@@ -1,4 +1,5 @@
 import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/core/utils/widgets/refreshIcon_widet.dart';
 import 'package:coinexa_app/features/details/presentation/mange_state/cubit_chart/chart_mange_cubit.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
@@ -6,7 +7,6 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/buttom_wi
 import 'package:coinexa_app/features/details/presentation/view/widgets/cryptoLineChart.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/info_Card_widget.dart';
-import 'package:coinexa_app/features/details/presentation/view/widgets/right_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/price_crypto_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
@@ -46,7 +46,7 @@ class DetailsScreenBody extends StatelessWidget {
               left: 150,
               child: HeadTitleWidget(headTitle: headtitle),
             ),
-            Positioned(top: 60, right: 20, child: LeftIconWidget()),
+            Positioned(top: 60, right: 20, child: RefreshiconWidet()),
             Positioned(
               top: 130,
               left: 120,

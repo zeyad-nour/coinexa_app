@@ -5,8 +5,8 @@ import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cu
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TopiconWidet extends StatelessWidget {
-  const TopiconWidet({super.key});
+class RefreshiconWidet extends StatelessWidget {
+  const RefreshiconWidet({super.key});
 
   @override
   Widget build(BuildContext context) {
