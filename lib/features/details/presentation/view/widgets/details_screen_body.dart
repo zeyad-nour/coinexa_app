@@ -5,7 +5,7 @@ import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/buttom_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/cryptoLineChart.dart';
-import 'package:coinexa_app/features/details/presentation/view/widgets/head_title_widget.dart';
+import 'package:coinexa_app/core/utils/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/info_Card_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/price_crypto_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';

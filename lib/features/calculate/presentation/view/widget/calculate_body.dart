@@ -1,5 +1,6 @@
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
+import 'package:coinexa_app/core/utils/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/calculate/presentation/view/widget/calculate_background_widget.dart';
 import 'package:coinexa_app/features/calculate/presentation/view/widget/image_widget.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,13 @@ class CalculateBody extends StatelessWidget {
               width: 200,
               height: 300,
             ),
+          ),
+          Positioned(
+            top: 120,
+            right: 230,
+            left: 230,
+
+            child: HeadTitleWidget(headTitle: "Calculater",),
           ),
         ],
       ),
