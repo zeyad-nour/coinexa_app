@@ -20,6 +20,7 @@ class AnimatedListViewWidget extends StatelessWidget {
 
           return AnimationConfiguration.staggeredList(
             position: index,
+            delay: Duration(microseconds: 50),
             duration: Duration(milliseconds: 500),
             child: SlideAnimation(
               verticalOffset: 60,

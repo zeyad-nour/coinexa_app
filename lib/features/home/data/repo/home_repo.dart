@@ -4,6 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, List<CoinsModel>>> featchTrending();
-  // Future<Either<Failure, CoinsModel>> featchFeaturedBooks();
-  // Future<Either<Failure, CoinsModel>> featchSuggestionsbook();
+
 }
