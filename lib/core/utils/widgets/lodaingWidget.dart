@@ -1,3 +1,4 @@
+import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/material.dart';
 
 class Lodaingwidget extends StatelessWidget {
@@ -5,6 +6,6 @@ class Lodaingwidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircularProgressIndicator();
+    return CircularProgressIndicator(color: sTextColorDetailsPage);
   }
 }

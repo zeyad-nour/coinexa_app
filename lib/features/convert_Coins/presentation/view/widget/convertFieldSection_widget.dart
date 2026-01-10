@@ -36,7 +36,6 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
       });
       if (fromCoin != null && toCoin != null) _convert();
     } catch (e) {
-      // ممكن تضيف هنا عرض رسالة خطأ
       debugPrint('Error loading coins: $e');
     }
   }
@@ -75,7 +74,7 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
         BlocBuilder<ConvertCubit, ConvertCubitState>(
           builder: (context, state) {
             if (state is ConvertLoading) {
-              return const CircularProgressIndicator();
+              return const Lodaingwidget();
             }
 
             if (state is ConvertSuccess) {

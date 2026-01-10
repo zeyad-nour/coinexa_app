@@ -40,8 +40,14 @@ class ServerFailuer extends Failure {
       return ServerFailuer("Your Request not Found, Please try later");
     } else if (statusCode == 500) {
       return ServerFailuer("Internal Server Error, Please try later");
+    } else if (statusCode == 429) {
+      return ServerFailuer(
+        "The Server has Received too many requsts please waite and click on the refresh icon",
+      );
     } else {
-      return ServerFailuer("Opps there was an Error, Please try agin");
+      return ServerFailuer(
+        "Opps there was an Error, Please click on the refresh icon",
+      );
     }
   }
 }
