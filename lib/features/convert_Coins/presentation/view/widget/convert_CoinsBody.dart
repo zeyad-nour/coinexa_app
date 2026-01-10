@@ -1,4 +1,5 @@
 import 'package:coinexa_app/core/utils/api_serves.dart';
+import 'package:coinexa_app/core/utils/widgets/refreshIcon_widet.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/convert_Coins/data/repo/convert_repo_implement.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/mange_state/cubit/convert_cubit_cubit.dart';
@@ -19,6 +20,7 @@ class ConvertCoinsbody extends StatelessWidget {
         children: [
           BachgroundConvert(),
           Positioned(top: 100, left: 20, child: BackIconWidget()),
+          Positioned(top: 100, right: 20, child: RefreshiconWidet()),
           Positioned(
             top: 210,
             left: 60,

@@ -11,16 +11,18 @@ class RefreshiconWidet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: 60,
+      height: 60,
       decoration: BoxDecoration(
         color: bacgroundIconButtom,
         borderRadius: BorderRadius.circular(400),
       ),
-      child: IconButton(onPressed: () { 
-                  context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
-
-      }, icon: Icon(Icons.refresh_outlined)),
+      child: IconButton(
+        onPressed: () {
+          context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
+        },
+        icon: Icon(Icons.refresh_outlined),
+      ),
     );
   }
 }

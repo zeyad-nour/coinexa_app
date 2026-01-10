@@ -7,31 +7,33 @@ class LearnmorebuttomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: const Color.fromARGB(197, 221, 96, 138),
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(197, 221, 96, 138),
 
-            spreadRadius: 1,
-            offset: Offset(10, 10),
-            blurRadius: 15,
+              spreadRadius: 1,
+              offset: Offset(10, 10),
+              blurRadius: 15,
+            ),
+          ],
+          color: Colors.white,
+
+          borderRadius: BorderRadius.horizontal(
+            left: Radius.circular(20),
+            right: Radius.circular(20),
           ),
-        ],
-        color: Colors.white,
-
-        borderRadius: BorderRadius.horizontal(
-          left: Radius.circular(20),
-          right: Radius.circular(20),
         ),
-      ),
-      height: 40,
-      width: 180,
-      child: MaterialButton(
-        onPressed: () {},
-        child: Text(
-          "Learn more",
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+        height: 40,
+        width: 180,
+        child: MaterialButton(
+          onPressed: () {},
+          child: Text(
+            "Learn more",
+            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+          ),
         ),
       ),
     );
