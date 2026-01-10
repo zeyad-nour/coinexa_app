@@ -12,10 +12,8 @@ class HomeCubitCubit extends Cubit<HomeCubitState> {
 
   HomeCubitCubit(this.repo) : super(HomeCubitInitial());
 
-  /// جلب العملات
   Future<void> featchTrending({bool isRefresh = false}) async {
     if (!isRefresh && state is! HomeCubitSuccess) {
-      // اللودنج يظهر فقط عند أول تحميل
       emit(HomeCubitLoding());
     }
 
@@ -24,7 +22,6 @@ class HomeCubitCubit extends Cubit<HomeCubitState> {
     result.fold(
       (failure) => emit(HomeCubitFailure(failure.errorMessage)),
       (coins) {
-        // ترتيب العملات حسب السعر من الأعلى للأقل
         coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));
         emit(HomeCubitSuccess(coinsList: coins));
       },
