@@ -29,7 +29,7 @@ class ServerFailuer extends Failure {
       case DioExceptionType.connectionError:
         return ServerFailuer("connection Error");
       case DioExceptionType.unknown:
-        return ServerFailuer("Unknown Error");
+        return ServerFailuer("Unknown Error,please try agin later");
     }
   }
 

@@ -17,12 +17,13 @@ class HomeCubitCubit extends Cubit<HomeCubitState> {
       emit(HomeCubitLoding());
     }
 
+
     final result = await repo.featchTrending();
 
     result.fold(
       (failure) => emit(HomeCubitFailure(failure.errorMessage)),
       (coins) {
-        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));
+        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));//algorithm sort
         emit(HomeCubitSuccess(coinsList: coins));
       },
     );

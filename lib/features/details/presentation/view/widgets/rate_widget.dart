@@ -1,4 +1,3 @@
-import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class RateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(iconRate.icon, color: drowpUpRateColor, size: 26),
+      
         Text(rate, style: Style.rateStyle_TextStyle),
       ],
     );
