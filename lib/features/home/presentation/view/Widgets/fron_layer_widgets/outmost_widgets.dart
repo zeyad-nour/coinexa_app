@@ -89,11 +89,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                   return Center(child: Text(state.errorMessage));
                 } else if (state is HomeCubitSuccess) {
                   coinsList = List.from(state.coinsList);
-                  coinsList.sort(
-                    (a, b) =>
-                        (b.currentPrice ?? 0).compareTo(a.currentPrice ?? 0),
-                  );
-
+                 
                   return AnimatedListViewWidget(coins: coinsList);
                 } else {
                   return SizedBox();
