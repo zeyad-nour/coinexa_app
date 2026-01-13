@@ -83,13 +83,12 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
 
             BlocBuilder<HomeCubitCubit, HomeCubitState>(
               builder: (context, state) {
-                if (state is HomeCubitLoding && coinsList.isEmpty) {
-                  return Center(child: Lodaingwidget());
+                if (state is HomeCubitLoding ) {
+                  return Lodaingwidget();
                 } else if (state is HomeCubitFailure) {
                   return Center(child: Text(state.errorMessage));
                 } else if (state is HomeCubitSuccess) {
                   coinsList = List.from(state.coinsList);
-                 
                   return AnimatedListViewWidget(coins: coinsList);
                 } else {
                   return SizedBox();

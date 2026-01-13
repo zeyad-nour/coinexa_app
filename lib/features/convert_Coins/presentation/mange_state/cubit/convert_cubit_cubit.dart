@@ -9,36 +9,40 @@ class ConvertCubit extends Cubit<ConvertCubitState> {
 
   ConvertCubit(this.repo) : super(ConvertCubitInitial());
 
-  Future<void> convert({
-    required String fromCoinId,
-    required String toCoinId,
-    required double amount,
-  }) async {
-    emit(ConvertLoading());
+Future<void> convert({
+  required String fromCoinId,
+  required String toCoinId,
+  required double amount,
+}) async {
+  emit(ConvertLoading());
 
-    try {
-      final prices = await repo.fetchPrices(coinIds: [fromCoinId, toCoinId]);
-
-      final fromPrice = prices
-          .firstWhere((e) => e.id == fromCoinId)
-          .usdPrice;
-
-      final toPrice = prices.firstWhere((e) => e.id == toCoinId).usdPrice;
-
-      final result = amount * fromPrice / toPrice;
-
-      emit(ConvertSuccess(result));
-    } catch (e) {
-      emit(ConvertFailure(e.toString()));
-    }
-  }
- Future<List<Coin>> fetchCoins() async {
   try {
-    final data = await repo.fetchAllCoins(); // method جديدة في repo
-    return data; // هتكون List<Coin> من API
+    final eitherPrices = await repo.fetchPrices(coinIds: [fromCoinId, toCoinId]);
+
+    eitherPrices.fold(
+      (failure) => emit(ConvertFailure(failure.toString())),
+      (pricesList) {
+      
+        final fromPrice = pricesList[0].currentPrice; 
+        final toPrice = pricesList[1].currentPrice;
+
+        final result = amount * fromPrice! / toPrice!;
+
+        emit(ConvertSuccess(result));
+      },
+    );
   } catch (e) {
-    throw Exception('Failed to fetch coins: $e');
+    emit(ConvertFailure(e.toString()));
   }
 }
 
+
+  Future<List<Coin>> fetchCoins() async {
+    try {
+      final data = await repo.fetchAllCoins();
+      return data;
+    } catch (e) {
+      throw Exception('Failed to fetch coins: $e');
+    }
+  }
 }

@@ -17,7 +17,7 @@ class HomeRepoImplement implements HomeRepo {
             "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false",
       );
 
-      if (data is List) {  // ensure the data is json array not json object
+      if (data is List) {  //for remember ensure the data is json array not json object
         List<CoinsModel> coinsInfo =
             data.map((item) => CoinsModel.fromJson(item)).toList();
         return right(coinsInfo);

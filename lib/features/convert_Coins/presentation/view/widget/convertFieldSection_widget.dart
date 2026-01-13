@@ -57,7 +57,6 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
 
     return Column(
       children: [
-        /// FROM
         CoinInputCard(
           coin2: fromCoin!,
           value: amount.toString(),
@@ -70,7 +69,6 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
         ),
         const SizedBox(height: 20),
 
-        /// TO
         BlocBuilder<ConvertCubit, ConvertCubitState>(
           builder: (context, state) {
             if (state is ConvertLoading) {
@@ -91,7 +89,7 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
             }
 
             if (state is ConvertFailure) {
-              return Text(state.error);
+              return Center(child: Text(state.error));
             }
 
             return CoinInputCard(coin2: toCoin!, value: '0.0', onTap: () {});

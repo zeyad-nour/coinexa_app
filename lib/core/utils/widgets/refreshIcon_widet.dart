@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RefreshiconWidet extends StatelessWidget {
+
   const RefreshiconWidet({super.key});
 
   @override
@@ -18,9 +19,7 @@ class RefreshiconWidet extends StatelessWidget {
         borderRadius: BorderRadius.circular(400),
       ),
       child: IconButton(
-        onPressed: () {
-          context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
-        },
+        onPressed: () =>    context.read<HomeCubitCubit>().featchTrending(isRefresh: true),
         icon: Icon(Icons.refresh_outlined),
       ),
     );
