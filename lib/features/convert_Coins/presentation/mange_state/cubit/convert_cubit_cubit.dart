@@ -9,40 +9,41 @@ class ConvertCubit extends Cubit<ConvertCubitState> {
 
   ConvertCubit(this.repo) : super(ConvertCubitInitial());
 
-Future<void> convert({
-  required String fromCoinId,
-  required String toCoinId,
-  required double amount,
-}) async {
-  emit(ConvertLoading());
+  Future<void> convert({
+    required String fromCoinId,
+    required String toCoinId,
+    required double amount,
+  }) async {
+    emit(ConvertLoading());
 
-  try {
-    final eitherPrices = await repo.fetchPrices(coinIds: [fromCoinId, toCoinId]);
+    try {
+      final eitherPrices = await repo.fetchPrices(
+        coinIds: [fromCoinId, toCoinId],
+      );
 
-    eitherPrices.fold(
-      (failure) => emit(ConvertFailure(failure.toString())),
-      (pricesList) {
-      
-        final fromPrice = pricesList[0].currentPrice; 
+      eitherPrices.fold((failure) => emit(ConvertFailure(failure.toString())), (
+        pricesList,
+      ) {
+        final fromPrice = pricesList[0].currentPrice;
         final toPrice = pricesList[1].currentPrice;
 
         final result = amount * fromPrice! / toPrice!;
 
         emit(ConvertSuccess(result));
-      },
-    );
-  } catch (e) {
-    emit(ConvertFailure(e.toString()));
+      });
+    } catch (e) {
+      emit(ConvertFailure(e.toString()));
+    }
   }
-}
-
 
   Future<List<Coin>> fetchCoins() async {
     try {
       final data = await repo.fetchAllCoins();
       return data;
     } catch (e) {
+       emit(ConvertFailure(e.toString()));
       throw Exception('Failed to fetch coins: $e');
+     
     }
   }
 }
