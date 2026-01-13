@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   final HomeRepo homeRepo = HomeRepoImplement(ApiServes(Dio()));
   MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
