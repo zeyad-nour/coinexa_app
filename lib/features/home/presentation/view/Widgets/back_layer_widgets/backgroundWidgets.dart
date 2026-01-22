@@ -23,13 +23,7 @@ class Backgroundwidgets extends StatelessWidget {
           Positioned(top: 180, left: 40, child: Textwidgettow()),
           Positioned(top: 160, right: 10, child: ImageWidget()),
           Positioned(top: 240, left: 40, child: LearnmorebuttomWidget()),
-          Positioned(
-            top: 60,
-            right: 20,
-            child: RefreshiconWidet(
-           
-            ),
-          ),
+          Positioned(top: 60, right: 20, child: RefreshiconWidet()),
           Positioned(top: 320, child: OutmostWidgets()),
         ],
       ),

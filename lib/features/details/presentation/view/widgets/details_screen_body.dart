@@ -42,32 +42,32 @@ class DetailsScreenBody extends StatelessWidget {
             BackgrounPageDetails(),
             Positioned(top: 60, left: 20, child: BackIconWidget()),
             Positioned(
-              top: 80,
+              top: 70,
               left: 150,
               child: HeadTitleWidget(headTitle: headtitle),
             ),
             Positioned(top: 60, right: 20, child: RefreshiconWidet()),
             Positioned(
-              top: 130,
+              top: 110,
               left: 120,
-              child: Center(child: PriceCryptoWidget(price: price.toString())),
+              child: PriceCryptoWidget(price: price.toString()),
             ),
             Positioned(
-              top: 180,
-              left: 180,
+              top: 150,
+              left: 150,
               child: RateWidget(
                 rate: rate.toString(),
                 iconRate: Icon(Icons.arrow_drop_up_outlined),
               ),
             ),
             Positioned(
-              top: 280,
-              left: 20,
-              right: 20,
+              top: 230,
+              left: 10,
+              right: 10,
               child: CryptoLineChart(coinID: coinId),
             ),
             Positioned(
-              top: 900,
+              top: 700,
               left: 50,
               child: ButtonWidget(
                 colortext: sTextColorDetailsPage,
@@ -76,7 +76,7 @@ class DetailsScreenBody extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 900,
+              top: 700,
               right: 50,
               child: ButtonWidget(
                 colortext: kPrimaryColorsTow,
@@ -85,8 +85,9 @@ class DetailsScreenBody extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 50,
+              bottom: 20,
               left: 20,
+              right: 20,
               child: InfoCardWidget(
                 image: imageUrl,
                 namecoin: name,
