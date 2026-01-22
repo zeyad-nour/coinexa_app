@@ -4,6 +4,7 @@ import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/core/utils/widgets/head_title_widget.dart';
 import 'package:coinexa_app/features/favorite/presentation/view/widget/Favorite_background_widget.dart';
+import 'package:coinexa_app/features/favorite/presentation/view/widget/Favorite_card.dart';
 import 'package:coinexa_app/features/favorite/presentation/view/widget/image_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -42,8 +43,9 @@ class favoriteBody extends StatelessWidget {
 
             left: 140,
 
-            child: HeadTitleWidget(headTitle: "Calculater"),
+            child: HeadTitleWidget(headTitle: "Favorite"),
           ),
+          Positioned(top: 200, child: FavoriteCard()),
         ],
       ),
     );
