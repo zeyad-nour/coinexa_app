@@ -13,13 +13,13 @@ class FavoriteCard extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width * 1,
       height: MediaQuery.sizeOf(context).height * 0.1,
       decoration: BoxDecoration(
-        color: backgroundColorCalculate,
-        borderRadius: BorderRadius.circular(50),
+        color: backgroundColorCalculate.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Card(
-        color: secoundBackgroundColor.withOpacity(0.0009),
+        color: secoundBackgroundColor.withOpacity(0.2),
         elevation: 10,
-        shadowColor: secoundBackgroundColor.withOpacity(0.39),
+        shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
           title: Text("title"),
           subtitle: Text("subtitle"),
