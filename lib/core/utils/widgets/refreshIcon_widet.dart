@@ -6,20 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RefreshiconWidet extends StatelessWidget {
-
   const RefreshiconWidet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
-      height: 60,
+      width: 50,
+      height: 50,
       decoration: BoxDecoration(
         color: bacgroundIconButtom,
         borderRadius: BorderRadius.circular(400),
       ),
       child: IconButton(
-        onPressed: () =>    context.read<HomeCubitCubit>().featchTrending(isRefresh: true),
+        onPressed: () {
+          context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
+        },
         icon: Icon(Icons.refresh_outlined),
       ),
     );

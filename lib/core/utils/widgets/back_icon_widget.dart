@@ -11,8 +11,8 @@ class BackIconWidget extends StatelessWidget {
         color: bacgroundIconButtom,
         borderRadius: BorderRadius.circular(100),
       ),
-      width: 66,
-      height: 66,
+      width: 50,
+      height: 50,
 
       child: IconButton(
         onPressed: () {

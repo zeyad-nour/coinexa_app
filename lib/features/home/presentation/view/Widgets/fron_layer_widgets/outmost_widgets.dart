@@ -1,9 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'dart:async';
-
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
+import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/home/data/Model/coins_model/coins_model.dart';
 import 'package:coinexa_app/features/home/presentation/mange_state/cubit/home_cubit_cubit.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/gridView_widgets.dart';
@@ -83,12 +83,19 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
 
             BlocBuilder<HomeCubitCubit, HomeCubitState>(
               builder: (context, state) {
-                if (state is HomeCubitLoding ) {
+                if (state is HomeCubitLoding) {
                   return Lodaingwidget();
                 } else if (state is HomeCubitFailure) {
-                  return Center(child: Text(state.errorMessage));
+                  return Center(
+                    child: Text(
+                      state.errorMessage,
+                      style: Style.TextStyle25.copyWith(
+                        color: dropDownRateColor,
+                      ),
+                    ),
+                  );
                 } else if (state is HomeCubitSuccess) {
-                  coinsList = List.from(state.coinsList);
+                  coinsList = state.coinsList;
                   return AnimatedListViewWidget(coins: coinsList);
                 } else {
                   return SizedBox();

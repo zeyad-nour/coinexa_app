@@ -15,7 +15,7 @@ class CalculateBody extends StatelessWidget {
         children: [
           CalculateBackgroundWidget(),
 
-          Positioned(top: 100, left: 20, child: BackIconWidget()),
+          Positioned(top: 81, left: 20, child: BackIconWidget()),
           Positioned(
             top: 460,
             left: 00,
@@ -36,11 +36,11 @@ class CalculateBody extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 120,
-            right: 230,
-            left: 230,
+            top: 110,
 
-            child: HeadTitleWidget(headTitle: "Calculater",),
+            left: 140,
+
+            child: HeadTitleWidget(headTitle: "Calculater"),
           ),
         ],
       ),

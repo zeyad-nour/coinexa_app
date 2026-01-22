@@ -18,12 +18,12 @@ class HomeCubitCubit extends Cubit<HomeCubitState> {
     }
 
 
-    final result = await repo.featchTrending();
+    final result = await repo.featchTrending(); // Linked between Logic and StateMangement (Repo and Bloc)
 
     result.fold(
       (failure) => emit(HomeCubitFailure(failure.errorMessage)),
       (coins) {
-        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));//algorithm sort
+        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));//sort algorithm 
         emit(HomeCubitSuccess(coinsList: coins));
       },
     );

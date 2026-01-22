@@ -26,19 +26,16 @@ class ConvertCoinsbody extends StatelessWidget {
             left: 60,
             child: Text(
               "Converter",
-              style: Style.headTitle_TextStyle.copyWith(fontSize: 60),
+              style: Style.headTitle_TextStyle.copyWith(fontSize: 40),
             ),
           ),
-      Positioned(
+          Positioned(
             top: 330,
             left: 20,
             right: 20,
             child: BlocProvider(
-              create: (context) => ConvertCubit(
-                ConvertRepoImpl(
-                  ApiServes(Dio()),
-                ),
-              ),
+              create: (context) =>
+                  ConvertCubit(ConvertRepoImpl(ApiServes(Dio()))),
               child: const ConvertFieldsSection(),
             ),
           ),

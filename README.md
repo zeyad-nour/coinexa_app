@@ -7,6 +7,7 @@ _New features and improvements will be implemented in future updates!_
 
 ## 🌟 Features
 
+
 <div style="background-color:#f5f5f5; padding: 10px; border-radius: 8px;">
 
 - 💰 **Real-time Price Updates** – Instant updates using [CoinGecko API](https://api.coingecko.com/api/v3/)  

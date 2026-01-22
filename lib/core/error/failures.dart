@@ -27,7 +27,7 @@ class ServerFailuer extends Failure {
       case DioExceptionType.cancel:
         return ServerFailuer("You`r Requst was Cancel");
       case DioExceptionType.connectionError:
-        return ServerFailuer("connection Error");
+        return ServerFailuer("Connection Error");
       case DioExceptionType.unknown:
         return ServerFailuer("Unknown Error,please try agin later");
     }
@@ -42,7 +42,7 @@ class ServerFailuer extends Failure {
       return ServerFailuer("Internal Server Error, Please try later");
     } else if (statusCode == 429) {
       return ServerFailuer(
-        "The Server has Received too many requsts please waite and click on the refresh icon",
+        "The Server has Received too many requsts please wait and click on the refresh icon",
       );
     } else {
       return ServerFailuer(
