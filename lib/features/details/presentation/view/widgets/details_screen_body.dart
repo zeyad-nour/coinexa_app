@@ -80,7 +80,7 @@ class DetailsScreenBody extends StatelessWidget {
               right: 50,
               child: ButtonWidget(
                 colortext: kPrimaryColorsTow,
-                text: "Set Alert",
+                text: "Favorite",
                 colorbutton: pTextColorDetailsPage,
               ),
             ),

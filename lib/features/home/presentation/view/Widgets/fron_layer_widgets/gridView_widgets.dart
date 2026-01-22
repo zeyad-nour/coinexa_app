@@ -41,7 +41,7 @@ class GridviewWidgets extends StatelessWidget {
             },
             child: OptionsCardWidgets(
               imagename: AssetsData.watchlists,
-              title: "Calculator",
+              title: "Favorite",
             ),
           ),
           OptionsCardWidgets(imagename: AssetsData.compare, title: "Compare"),
