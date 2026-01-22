@@ -83,10 +83,10 @@ class DetailsScreenBody extends StatelessWidget {
               child: ButtonWidget(
                 onPressed: () {
                   favoriteCoins.add(
-                    ModelFavoritcoin(name, price, imageUrl, rate, headtitle),
+                    ModelFavoritcoin(headtitle, price, imageUrl, rate),
                   );
                   print(favoriteCoins.length);
-
+                  print(headtitle);
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",

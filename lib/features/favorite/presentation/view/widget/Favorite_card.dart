@@ -8,14 +8,12 @@ import 'package:flutter/material.dart';
 class FavoriteCard extends StatelessWidget {
   final String namecoin;
   final double price;
-  final String subtitle;
   final String imageUrl;
   final double rate;
   const FavoriteCard({
     super.key,
     required this.namecoin,
     required this.price,
-    required this.subtitle,
     required this.rate,
     required this.imageUrl,
   });
@@ -36,7 +34,6 @@ class FavoriteCard extends StatelessWidget {
         shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
           title: Text(namecoin),
-          subtitle: Text(subtitle),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: CachedNetworkImage(

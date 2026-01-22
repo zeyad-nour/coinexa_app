@@ -1,6 +1,5 @@
 class ModelFavoritcoin {
   String namecoin;
-  String subtitle;
   String imageUrl;
   double rate;
   double price;
@@ -9,6 +8,5 @@ class ModelFavoritcoin {
     this.price,
     this.imageUrl,
     this.rate,
-    this.subtitle,
   );
 }

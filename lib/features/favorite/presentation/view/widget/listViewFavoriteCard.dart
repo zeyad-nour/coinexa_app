@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 class Listviewfavoritecard extends StatelessWidget {
   final List<ModelFavoritcoin> favoritcoins;
 
-  const Listviewfavoritecard({
-    super.key,
-    required this.favoritcoins,
-  });
+  const Listviewfavoritecard({super.key, required this.favoritcoins});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,6 @@ class Listviewfavoritecard extends StatelessWidget {
           child: FavoriteCard(
             namecoin: coin.namecoin,
             price: coin.price,
-            subtitle: coin.subtitle,
             rate: coin.rate,
             imageUrl: coin.imageUrl,
           ),
