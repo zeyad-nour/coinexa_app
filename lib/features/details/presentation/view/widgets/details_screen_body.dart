@@ -43,7 +43,7 @@ class DetailsScreenBody extends StatelessWidget {
             Positioned(top: 60, left: 20, child: BackIconWidget()),
             Positioned(
               top: 70,
-              left: 150,
+              left: 100,
               child: HeadTitleWidget(headTitle: headtitle),
             ),
             Positioned(top: 60, right: 20, child: RefreshiconWidet()),
@@ -79,6 +79,9 @@ class DetailsScreenBody extends StatelessWidget {
               top: 700,
               right: 50,
               child: ButtonWidget(
+                onPressed: () { 
+                  
+                },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",
                 colorbutton: pTextColorDetailsPage,

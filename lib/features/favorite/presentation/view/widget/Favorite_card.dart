@@ -4,7 +4,18 @@ import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteCard extends StatelessWidget {
-  const FavoriteCard({super.key});
+  final String namecoin;
+  final double price;
+  final String subtitle;
+  final String imageUrl;
+  final double rate;
+  const FavoriteCard({
+    super.key,
+    required this.namecoin,
+    required this.price,
+    required this.subtitle,
+    required this.rate, required this.imageUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +32,10 @@ class FavoriteCard extends StatelessWidget {
         elevation: 10,
         shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
-          title: Text("title"),
-          subtitle: Text("subtitle"),
+          title: Text(namecoin),
+          subtitle: Text(subtitle),
           leading: Text("Image"),
-          trailing: Column(children: [Text("price"), Spacer(), Text("Rate")]),
+          trailing: Column(children: [Text("$price"), Spacer(), Text("$rate")]),
         ),
       ),
     );

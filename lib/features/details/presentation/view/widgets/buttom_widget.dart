@@ -9,12 +9,14 @@ class ButtonWidget extends StatelessWidget {
   final Color colorbutton;
   final Color colortext;
   final String text;
+  final void Function()? onPressed;
 
   const ButtonWidget({
     super.key,
     required this.colorbutton,
     required this.colortext,
     required this.text,
+    this.onPressed,
   });
 
   @override
@@ -30,7 +32,7 @@ class ButtonWidget extends StatelessWidget {
         ),
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: Style.headTitle_TextStyle.copyWith(
