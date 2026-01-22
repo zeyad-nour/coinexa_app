@@ -1,12 +1,14 @@
+// ignore_for_file: camel_case_types
+
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/core/utils/widgets/head_title_widget.dart';
-import 'package:coinexa_app/features/calculate/presentation/view/widget/calculate_background_widget.dart';
-import 'package:coinexa_app/features/calculate/presentation/view/widget/image_widget.dart';
+import 'package:coinexa_app/features/favorite/presentation/view/widget/Favorite_background_widget.dart';
+import 'package:coinexa_app/features/favorite/presentation/view/widget/image_widget.dart';
 import 'package:flutter/material.dart';
 
-class CalculateBody extends StatelessWidget {
-  const CalculateBody({super.key});
+class favoriteBody extends StatelessWidget {
+  const favoriteBody({super.key});
 
   @override
   Widget build(BuildContext context) {
