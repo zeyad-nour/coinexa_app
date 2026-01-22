@@ -1,6 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:coinexa_app/conistant.dart';
+import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -14,7 +16,8 @@ class FavoriteCard extends StatelessWidget {
     required this.namecoin,
     required this.price,
     required this.subtitle,
-    required this.rate, required this.imageUrl,
+    required this.rate,
+    required this.imageUrl,
   });
 
   @override
@@ -34,7 +37,19 @@ class FavoriteCard extends StatelessWidget {
         child: ListTile(
           title: Text(namecoin),
           subtitle: Text(subtitle),
-          leading: Text("Image"),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              width: 45,
+              height: 45,
+              fit: BoxFit.cover,
+              placeholder: (context, url) =>
+                  SizedBox(width: 20, height: 20, child: Lodaingwidget()),
+              errorWidget: (context, url, error) =>
+                  const Icon(Icons.error, color: Colors.red),
+            ),
+          ),
           trailing: Column(children: [Text("$price"), Spacer(), Text("$rate")]),
         ),
       ),
