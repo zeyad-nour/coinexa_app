@@ -10,6 +10,8 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/info_Card
 import 'package:coinexa_app/features/details/presentation/view/widgets/price_crypto_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
+import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
+import 'package:coinexa_app/features/favorite/presentation/view/widget/favorite_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -79,8 +81,12 @@ class DetailsScreenBody extends StatelessWidget {
               top: 700,
               right: 50,
               child: ButtonWidget(
-                onPressed: () { 
-                  
+                onPressed: () {
+                  favoriteCoins.add(
+                    ModelFavoritcoin(name, price, imageUrl, rate, headtitle),
+                  );
+                  print(favoriteCoins.length);
+
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",

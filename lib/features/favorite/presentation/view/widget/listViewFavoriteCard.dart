@@ -3,32 +3,32 @@ import 'package:coinexa_app/features/favorite/presentation/view/widget/Favorite_
 import 'package:flutter/material.dart';
 
 class Listviewfavoritecard extends StatelessWidget {
-  final ModelFavoritcoin favoritcoins;
-
+  final List<ModelFavoritcoin> favoritcoins;
 
   const Listviewfavoritecard({
-    super.key, required this.favoritcoins, required String nameCoin,
- 
+    super.key,
+    required this.favoritcoins,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width * 1,
-      height: MediaQuery.sizeOf(context).height * 1,
-      decoration: BoxDecoration(color: Colors.blueGrey.withOpacity(0.06)),
-      child: ListView.builder(
-        itemCount: 1,
-        itemBuilder: (context, index) {
-          return FavoriteCard(
-            namecoin:favoritcoins.namecoin ,
-            price: favoritcoins.price,
-            subtitle: favoritcoins.subtitle,
-            rate: favoritcoins.rate,
-            imageUrl: favoritcoins.imageUrl,
-          );
-        },
-      ),
+    return ListView.builder(
+      padding: const EdgeInsets.all(16),
+      itemCount: favoritcoins.length,
+      itemBuilder: (context, index) {
+        final coin = favoritcoins[index];
+
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: FavoriteCard(
+            namecoin: coin.namecoin,
+            price: coin.price,
+            subtitle: coin.subtitle,
+            rate: coin.rate,
+            imageUrl: coin.imageUrl,
+          ),
+        );
+      },
     );
   }
 }
