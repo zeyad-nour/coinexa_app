@@ -11,6 +11,7 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/price_cry
 import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
 import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
+import 'package:coinexa_app/features/favorite/presentation/StateManage/cubit/favorite_cubit.dart';
 import 'package:coinexa_app/features/favorite/presentation/view/widget/favorite_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -82,10 +83,10 @@ class DetailsScreenBody extends StatelessWidget {
               right: 50,
               child: ButtonWidget(
                 onPressed: () {
-                  favoriteCoins.add(
+                  // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
+                  context.read<FavoriteCubit>().addItem(
                     ModelFavoritcoin(headtitle, price, imageUrl, rate),
                   );
-               
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",
