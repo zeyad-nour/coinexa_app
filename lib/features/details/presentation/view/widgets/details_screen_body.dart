@@ -85,8 +85,7 @@ class DetailsScreenBody extends StatelessWidget {
                   favoriteCoins.add(
                     ModelFavoritcoin(headtitle, price, imageUrl, rate),
                   );
-                  print(favoriteCoins.length);
-                  print(headtitle);
+               
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",

@@ -21,7 +21,7 @@ abstract class Style {
   static const headTitle_TextStyle = TextStyle(
     color: pTextColorDetailsPage,
     fontWeight: FontWeight.w900,
-    fontSize: 30,
+    fontSize: 22,
   );
   static const priceCrypto_TextStyle = TextStyle(
     color: pTextColorDetailsPage,

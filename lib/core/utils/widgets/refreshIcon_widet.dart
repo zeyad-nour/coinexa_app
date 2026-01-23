@@ -21,7 +21,7 @@ class RefreshiconWidet extends StatelessWidget {
         onPressed: () {
           context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
         },
-        icon: Icon(Icons.refresh_outlined),
+        icon: Icon(Icons.refresh_outlined, color: pTextColorDetailsPage),
       ),
     );
   }

@@ -20,7 +20,7 @@ class HomeRepoImplement implements HomeRepo {
       if (data is List) {  //for remember ensure the data is json array not json object
         List<CoinsModel> coinsInfo =
             data.map((item) => CoinsModel.fromJson(item)).toList();
-        return right(coinsInfo);
+        return right(coinsInfo);      
       } else {
         return left(ServerFailuer("Invalid data format"));
       }
