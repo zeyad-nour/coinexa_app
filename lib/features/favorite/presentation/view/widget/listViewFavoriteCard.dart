@@ -2,8 +2,10 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
+import 'package:coinexa_app/features/favorite/presentation/StateManage/cubit/favorite_cubit.dart';
 import 'package:coinexa_app/features/favorite/presentation/view/widget/Favorite_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Listviewfavoritecard extends StatelessWidget {
   final List<ModelFavoritcoin> favoritcoins;
@@ -38,12 +40,9 @@ class Listviewfavoritecard extends StatelessWidget {
               desc: 'Are you sure about deleting it ?',
               descTextStyle: Style.priceCrypto_TextStyle.copyWith(fontSize: 22),
               showCloseIcon: true,
-              btnCancelOnPress: () {
-                Navigator.of(context).pop();
-              },
+              btnOkColor: Colors.red,
               btnOkOnPress: () {
-          
-                favoritcoins.remove(coin);
+                context.read<FavoriteCubit>().deleteItem(index);
               },
             ).show();
           },
