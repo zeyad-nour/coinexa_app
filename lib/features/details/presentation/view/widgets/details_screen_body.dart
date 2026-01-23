@@ -12,7 +12,6 @@ import 'package:coinexa_app/features/details/presentation/view/widgets/rate_widg
 import 'package:coinexa_app/features/details/presentation/view/widgets/time_frame.dart';
 import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
 import 'package:coinexa_app/features/favorite/presentation/StateManage/cubit/favorite_cubit.dart';
-import 'package:coinexa_app/features/favorite/presentation/view/widget/favorite_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
