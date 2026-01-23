@@ -42,8 +42,9 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 12),
       width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height * 0.8,
+      height: MediaQuery.sizeOf(context).height * 0.7,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
