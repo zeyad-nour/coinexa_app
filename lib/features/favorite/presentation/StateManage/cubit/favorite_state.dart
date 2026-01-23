@@ -5,3 +5,7 @@ sealed class FavoriteState {}
 
 final class FavoriteInitial extends FavoriteState {}
 
+final class FavoriteSuccess extends FavoriteState {
+  List<ModelFavoritcoin> coins = [];
+  FavoriteSuccess(this.coins);
+}
