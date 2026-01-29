@@ -58,11 +58,7 @@ class favoriteBody extends StatelessWidget {
                   child: Listviewfavoritecard(favoritcoins: state.coins),
                 );
               }
-              return Positioned(
-                top: 200,
-                left: 120,
-                child: Text("Not Found Favorite Iteams"),
-              );
+              return SizedBox();
             },
           ),
         ],

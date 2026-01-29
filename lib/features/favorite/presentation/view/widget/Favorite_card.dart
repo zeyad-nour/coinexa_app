@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
+import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -33,7 +34,10 @@ class FavoriteCard extends StatelessWidget {
         elevation: 10,
         shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
-          title: Text(namecoin),
+          title: Text(
+            namecoin,
+            style: Style.TextStyle18.copyWith(fontSize: 20),
+          ),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: CachedNetworkImage(
@@ -48,7 +52,17 @@ class FavoriteCard extends StatelessWidget {
             ),
           ),
           trailing: Column(
-            children: [Text("Price: $price"), Spacer(), Text("Rate: $rate")],
+            children: [
+              Text(
+                "Price: $price",
+                style: Style.TextStyle18.copyWith(color: Colors.white),
+              ),
+              Spacer(),
+              Text(
+                "Rate: $rate",
+                style: Style.TextStyle18.copyWith(color: Colors.black),
+              ),
+            ],
           ),
         ),
       ),

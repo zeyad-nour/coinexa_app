@@ -81,7 +81,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                 ),
               ),
             ),
-
+       
             BlocBuilder<HomeCubitCubit, HomeCubitState>(
               builder: (context, state) {
                 if (state is HomeCubitLoding) {
