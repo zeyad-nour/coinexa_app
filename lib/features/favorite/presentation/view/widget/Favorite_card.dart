@@ -47,7 +47,9 @@ class FavoriteCard extends StatelessWidget {
                   const Icon(Icons.error, color: Colors.red),
             ),
           ),
-          trailing: Column(children: [Text("$price"), Spacer(), Text("$rate")]),
+          trailing: Column(
+            children: [Text("Price: $price"), Spacer(), Text("Rate: $rate")],
+          ),
         ),
       ),
     );

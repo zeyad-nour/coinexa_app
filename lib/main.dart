@@ -31,8 +31,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(body: HomeScreen()),
-        routes: {"convertpage": (context) => ConvertCoins()},
+        routes: {"convertpage": (context) => ConvertCoins()}, 
+    
       ),
     );
-  }
+  } 
 }

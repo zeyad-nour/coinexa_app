@@ -71,7 +71,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
               child: GridviewWidgets(),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.only(left: 10),
               child: Text(
                 "Trending",
                 style: TextStyle(
@@ -85,7 +85,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
             BlocBuilder<HomeCubitCubit, HomeCubitState>(
               builder: (context, state) {
                 if (state is HomeCubitLoding) {
-                  return Lodaingwidget();
+                  return Center(child: Lodaingwidget());
                 } else if (state is HomeCubitFailure) {
                   return Center(
                     child: Text(
