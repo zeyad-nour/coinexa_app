@@ -1,12 +1,12 @@
 # 🎉 CoinExa - Cryptocurrency App
 
 **CoinExa** is a **preliminary version** of a modern Flutter application for tracking, converting, and analyzing cryptocurrency prices in real-time.  
+This app also uses **Hive** for efficient local storage of favorite coins and user data.  
 _New features and improvements will be implemented in future updates!_
 
 ---
 
 ## 🌟 Features
-
 
 <div style="background-color:#f5f5f5; padding: 10px; border-radius: 8px;">
 
@@ -17,6 +17,7 @@ _New features and improvements will be implemented in future updates!_
 - 📊 **Detailed Charts** – Daily, weekly, monthly, and yearly price trends  
 - ⚡ **High Performance** – Optimized for minimal memory and CPU usage  
 - 🏗️ **Architecture** – Built using **BLoC** for state management & **MVVM** pattern for clean code  
+- 🗄️ **Local Storage with Hive** – Store favorite coins and app data locally for offline access  
 
 </div>
 
@@ -33,6 +34,12 @@ _New features and improvements will be implemented in future updates!_
 <div style="background-color:#f5f5f5; padding: 10px; border-radius: 8px; text-align:center;">
 <img src="screensshots/convertScreen.png" alt="Convert Screen" width="250"/>
 <img src="screensshots/convertScreen2.png" alt="Convert Screen 2" width="250"/>
+</div>
+
+### Favorite Coins
+<div style="background-color:#f5f5f5; padding: 10px; border-radius: 8px; text-align:center;">
+<img src="screensshots/favoritepage.png" alt="Favorite Screen" width="250"/>
+<img src="screensshots/Daialog.png" alt="Favorite Screen 2" width="250"/>
 </div>
 
 ### Coin Details
