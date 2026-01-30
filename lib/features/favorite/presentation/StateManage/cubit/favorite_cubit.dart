@@ -17,6 +17,9 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     emit(FavoriteSuccess(favoriteBox.values.toList())); 
   }
 
- 
+ void deleteItem(int index) {
+    favoriteBox.deleteAt(index); 
+    emit(FavoriteSuccess(favoriteBox.values.toList()));
+  }
   
 }
