@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
@@ -25,6 +27,8 @@ class Listviewfavoritecard extends StatelessWidget {
             AwesomeDialog(
               context: context,
               dialogType: .noHeader,
+              dialogBackgroundColor: Colors.transparent,
+              barrierColor: Colors.black.withOpacity(0.3),
               borderSide: const BorderSide(
                 color: backgroundColorCalculate,
                 width: 2,
@@ -38,9 +42,13 @@ class Listviewfavoritecard extends StatelessWidget {
               animType: AnimType.leftSlide,
 
               desc: 'Are you sure about deleting it ?',
-              descTextStyle: Style.priceCrypto_TextStyle.copyWith(fontSize: 22),
+              descTextStyle: Style.priceCrypto_TextStyle.copyWith(
+                fontSize: 22,
+                color: Colors.white,
+              ),
               showCloseIcon: true,
-              btnOkColor: Colors.red,
+
+              btnOkColor: backgroundColorCalculate.withOpacity(0.8),
               btnOkOnPress: () {
                 context.read<FavoriteCubit>().deleteItem(index);
               },

@@ -26,7 +26,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
   void initState() {
     super.initState();
     _loadData();
-    _timer = Timer.periodic(Duration(seconds: 13), (_) => _loadData());
+    _timer = Timer.periodic(Duration(seconds: 30), (_) => _loadData());
   }
 
   void _loadData() {
