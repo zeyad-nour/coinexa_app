@@ -19,14 +19,16 @@ class ChartMangeCubit extends Cubit<ChartMangeState> {
     required String coinId,
     required TimeFrame timeFrame,
   }) async {
+    if (isClosed) return;
     emit(ChartMangeLoading());
 
     try {
       final days = _mapTimeFrameToDays(timeFrame);
       final points = await repo.fetchChart(coinId: coinId, days: days);
-
+      if (isClosed) return;
       emit(ChartMangeSuccess(points));
     } catch (e) {
+      if (isClosed) return;
       emit(ChartMangeFailure(e.toString()));
     }
   }
