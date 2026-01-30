@@ -47,6 +47,7 @@ class FavoriteCard extends StatelessWidget {
                   style: Style.TextStyle18.copyWith(
                     fontSize: 12,
                     fontWeight: FontWeight.w900,
+                    color: sTextColorDetailsPage,
                   ),
                 ),
               ],
