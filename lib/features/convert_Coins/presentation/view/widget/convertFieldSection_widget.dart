@@ -49,6 +49,8 @@ class _ConvertFieldsSectionState extends State<ConvertFieldsSection> {
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     if (fromCoin == null || toCoin == null) {

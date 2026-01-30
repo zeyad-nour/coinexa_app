@@ -39,7 +39,7 @@ _New features and improvements will be implemented in future updates!_
 ### Favorite Coins
 <div style="background-color:#f5f5f5; padding: 10px; border-radius: 8px; text-align:center;">
 <img src="screensshots/favoritepage.png" alt="Favorite Screen" width="250"/>
-<img src="screensshots/Daialog.png" alt="Favorite Screen 2" width="250"/>
+<img src="screensshots/Daialoog.png" alt="Favorite Screen 2" width="250"/>
 </div>
 
 ### Coin Details
