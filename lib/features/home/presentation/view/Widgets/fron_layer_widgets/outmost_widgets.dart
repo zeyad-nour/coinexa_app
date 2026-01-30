@@ -26,10 +26,12 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
   void initState() {
     super.initState();
     _loadData();
-    _timer = Timer.periodic(Duration(seconds: 10), (_) => _loadData());
+    _timer = Timer.periodic(Duration(seconds: 13), (_) => _loadData());
   }
 
   void _loadData() {
+    if (!mounted) return;
+
     context.read<HomeCubitCubit>().featchTrending(isRefresh: true);
   }
 
@@ -81,7 +83,7 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                 ),
               ),
             ),
-       
+
             BlocBuilder<HomeCubitCubit, HomeCubitState>(
               builder: (context, state) {
                 if (state is HomeCubitLoding) {

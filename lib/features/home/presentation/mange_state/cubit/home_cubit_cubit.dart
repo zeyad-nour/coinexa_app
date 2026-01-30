@@ -9,23 +9,37 @@ part 'home_cubit_state.dart';
 
 class HomeCubitCubit extends Cubit<HomeCubitState> {
   final HomeRepoImplement repo;
+  bool _isFetching = false;
 
   HomeCubitCubit(this.repo) : super(HomeCubitInitial());
 
   Future<void> featchTrending({bool isRefresh = false}) async {
-    if (!isRefresh && state is! HomeCubitSuccess) {
-      emit(HomeCubitLoding());
+    if (_isFetching || isClosed) return;
+
+    _isFetching = true;
+
+    try {
+      if (!isRefresh && state is! HomeCubitSuccess) {
+        emit(HomeCubitLoding());
+      }
+
+      final result = await repo.featchTrending();
+
+      if (isClosed) return;
+
+      result.fold(
+        (failure) => emit(HomeCubitFailure(failure.errorMessage)),
+        (coins) {
+          coins.sort(
+            (b, a) =>
+                (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0),
+          );
+          emit(HomeCubitSuccess(coinsList: coins));
+        },
+      );
+    } finally {
+      _isFetching = false; 
     }
-
-
-    final result = await repo.featchTrending(); // Linked between Logic and StateMangement (Repo and Bloc)
-
-    result.fold(
-      (failure) => emit(HomeCubitFailure(failure.errorMessage)),
-      (coins) {
-        coins.sort((b, a) => (a.currentPrice ?? 0).compareTo(b.currentPrice ?? 0));//sort algorithm 
-        emit(HomeCubitSuccess(coinsList: coins));
-      },
-    );
   }
 }
+
