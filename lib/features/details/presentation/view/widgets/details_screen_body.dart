@@ -86,6 +86,14 @@ class DetailsScreenBody extends StatelessWidget {
                   context.read<FavoriteCubit>().addItem(
                     ModelFavoritcoin(headtitle, price, imageUrl, rate),
                   );
+                  // showBottomSheet(
+                  //   context: context,
+                  //   builder: (builder) {
+                  //     return Text(
+                  //       "Added to Favorite you can vist Favorite page",
+                  //     );
+                  //   },
+                  // );
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",

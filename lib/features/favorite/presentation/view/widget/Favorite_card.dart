@@ -30,7 +30,7 @@ class FavoriteCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Card(
-        color: secoundBackgroundColor.withOpacity(0.2),
+        color: secoundBackgroundColor.withOpacity(0.22),
         elevation: 10,
         shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
