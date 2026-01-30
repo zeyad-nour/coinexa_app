@@ -16,11 +16,14 @@ class ModelFavoritcoin extends HiveObject {
 
   @HiveField(3)
   double rate;
+  @HiveField(4)
+  DateTime dateAdded;
 
   ModelFavoritcoin(
     this.namecoin,
     this.price,
     this.imageUrl,
     this.rate,
-  );
+    DateTime?dataTime,
+  ):dateAdded=dataTime??DateTime.now();
 }

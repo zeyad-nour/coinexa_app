@@ -21,13 +21,14 @@ class ModelFavoritcoinAdapter extends TypeAdapter<ModelFavoritcoin> {
       fields[1] as double,
       fields[2] as String,
       fields[3] as double,
+      fields[4] as DateTime,
     );
   }
 
   @override
   void write(BinaryWriter writer, ModelFavoritcoin obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.namecoin)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class ModelFavoritcoinAdapter extends TypeAdapter<ModelFavoritcoin> {
       ..writeByte(2)
       ..write(obj.imageUrl)
       ..writeByte(3)
-      ..write(obj.rate);
+      ..write(obj.rate)
+      ..writeByte(4)
+      ..write(obj.dateAdded);
   }
 
   @override

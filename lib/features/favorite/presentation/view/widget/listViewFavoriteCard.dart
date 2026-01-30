@@ -54,6 +54,7 @@ class Listviewfavoritecard extends StatelessWidget {
               price: coin.price,
               rate: coin.rate,
               imageUrl: coin.imageUrl,
+              dateAdded: coin.dateAdded,
             ),
           ),
         );

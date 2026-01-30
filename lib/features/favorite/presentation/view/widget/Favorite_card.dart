@@ -11,12 +11,14 @@ class FavoriteCard extends StatelessWidget {
   final double price;
   final String imageUrl;
   final double rate;
+  final DateTime dateAdded;
   const FavoriteCard({
     super.key,
     required this.namecoin,
     required this.price,
     required this.rate,
     required this.imageUrl,
+    required this.dateAdded,
   });
 
   @override
@@ -34,9 +36,18 @@ class FavoriteCard extends StatelessWidget {
         elevation: 10,
         shadowColor: secoundBackgroundColor.withOpacity(0.2),
         child: ListTile(
-          title: Text(
-            namecoin,
-            style: Style.TextStyle18.copyWith(fontSize: 20),
+          title: Column(
+            children: [
+              Text(namecoin, style: Style.TextStyle18.copyWith(fontSize: 20)),
+
+              Text(
+                "Added: ${dateAdded.day}/${dateAdded.month}/${dateAdded.year}",
+                style: Style.TextStyle18.copyWith(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ],
           ),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(50),
@@ -51,18 +62,22 @@ class FavoriteCard extends StatelessWidget {
                   const Icon(Icons.error, color: Colors.red),
             ),
           ),
-          trailing: Column(
-            children: [
-              Text(
-                "Price: $price",
-                style: Style.TextStyle18.copyWith(color: Colors.white),
-              ),
-              Spacer(),
-              Text(
-                "Rate: $rate",
-                style: Style.TextStyle18.copyWith(color: Colors.black),
-              ),
-            ],
+          trailing: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+
+              children: [
+                Text(
+                  "Price: $price",
+                  style: Style.TextStyle18.copyWith(color: Colors.white),
+                ),
+
+                Text(
+                  "Rate: $rate",
+                  style: Style.TextStyle18.copyWith(color: Colors.black),
+                ),
+              ],
+            ),
           ),
         ),
       ),

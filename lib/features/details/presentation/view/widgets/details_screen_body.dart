@@ -115,6 +115,7 @@ class _DetailsScreenBodyState extends State<DetailsScreenBody> {
                       widget.price,
                       widget.imageUrl,
                       widget.rate,
+                      DateTime.now()
                     ),
                   );
 
