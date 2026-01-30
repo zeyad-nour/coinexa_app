@@ -1,25 +1,22 @@
 import 'package:bloc/bloc.dart';
 import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 
 part 'favorite_state.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
-  FavoriteCubit() : super(FavoriteSuccess([]));
+  final Box<ModelFavoritcoin> favoriteBox;
 
+  FavoriteCubit(this.favoriteBox)
+      : super(FavoriteSuccess(favoriteBox.values.toList()));
+
+  
   void addItem(ModelFavoritcoin coin) {
-    final currentCoins = List<ModelFavoritcoin>.from(
-      (state as FavoriteSuccess).coins,
-    );
-    currentCoins.add(coin);
-    emit(FavoriteSuccess(currentCoins));
+    favoriteBox.add(coin); 
+    emit(FavoriteSuccess(favoriteBox.values.toList())); 
   }
 
-  void deleteItem(int index) {
-    final currentCoins = List<ModelFavoritcoin>.from(
-      (state as FavoriteSuccess).coins,
-    );
-    currentCoins.removeAt(index);
-    emit(FavoriteSuccess(currentCoins));
-  }
+ 
+  
 }
