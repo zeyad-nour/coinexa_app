@@ -1,5 +1,6 @@
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/refreshIcon_widet.dart';
+import 'package:coinexa_app/core/utils/widgets/styles.dart';
 import 'package:coinexa_app/features/details/presentation/mange_state/cubit_chart/chart_mange_cubit.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/details/presentation/view/widgets/backgroun_page_details.dart';
@@ -86,14 +87,16 @@ class DetailsScreenBody extends StatelessWidget {
                   context.read<FavoriteCubit>().addItem(
                     ModelFavoritcoin(headtitle, price, imageUrl, rate),
                   );
-                  // showBottomSheet(
-                  //   context: context,
-                  //   builder: (builder) {
-                  //     return Text(
-                  //       "Added to Favorite you can vist Favorite page",
-                  //     );
-                  //   },
-                  // );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: pTextColorDetailsPage,
+                      content: Text(
+                        "Added to Favorite! You can visit Favorite page.",
+                        style: Style.TextStyle18.copyWith(fontSize: 15),
+                      ),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
                 },
                 colortext: kPrimaryColorsTow,
                 text: "Favorite",
