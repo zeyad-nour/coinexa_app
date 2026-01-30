@@ -46,7 +46,6 @@ class _DetailsScreenBodyState extends State<DetailsScreenBody> {
     super.initState();
     chartCubit = ChartMangeCubit();
 
-  
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
         chartCubit.loadChart(coinId: widget.coinId, timeFrame: TimeFrame.week);
@@ -56,7 +55,7 @@ class _DetailsScreenBodyState extends State<DetailsScreenBody> {
 
   @override
   void dispose() {
-    chartCubit.close(); 
+    chartCubit.close();
     super.dispose();
   }
 
@@ -108,24 +107,23 @@ class _DetailsScreenBodyState extends State<DetailsScreenBody> {
               right: 50,
               child: ButtonWidget(
                 onPressed: () {
-               
                   context.read<FavoriteCubit>().addItem(
                     ModelFavoritcoin(
                       widget.headtitle,
                       widget.price,
                       widget.imageUrl,
                       widget.rate,
-                      DateTime.now()
+                      DateTime.now(),
                     ),
                   );
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      backgroundColor: pTextColorDetailsPage,
+                      backgroundColor: Colors.pink[200],
                       showCloseIcon: true,
                       content: Text(
                         "Added to Favorite! You can visit Favorite page.",
-                        style: Style.TextStyle18.copyWith(fontSize: 15),
+                        style: Style.TextStyle18,
                       ),
                       duration: const Duration(seconds: 2),
                     ),
