@@ -16,13 +16,14 @@ import 'package:coinexa_app/features/favorite/presentation/StateManage/cubit/fav
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DetailsScreenBody extends StatelessWidget {
+class DetailsScreenBody extends StatefulWidget {
   final double price;
   final double rate;
   final String headtitle;
   final String coinId;
   final String name;
   final String imageUrl;
+
   const DetailsScreenBody({
     super.key,
     required this.price,
@@ -34,40 +35,64 @@ class DetailsScreenBody extends StatelessWidget {
   });
 
   @override
+  State<DetailsScreenBody> createState() => _DetailsScreenBodyState();
+}
+
+class _DetailsScreenBodyState extends State<DetailsScreenBody> {
+  late final ChartMangeCubit chartCubit;
+
+  @override
+  void initState() {
+    super.initState();
+    chartCubit = ChartMangeCubit();
+
+  
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        chartCubit.loadChart(coinId: widget.coinId, timeFrame: TimeFrame.week);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    chartCubit.close(); 
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (_) =>
-            ChartMangeCubit()
-              ..loadChart(coinId: coinId, timeFrame: TimeFrame.week),
-        child: Stack(
+    return BlocProvider.value(
+      value: chartCubit,
+      child: Scaffold(
+        body: Stack(
           children: [
             BackgrounPageDetails(),
             Positioned(top: 60, left: 20, child: BackIconWidget()),
             Positioned(
               top: 70,
               left: 100,
-              child: HeadTitleWidget(headTitle: headtitle),
+              child: HeadTitleWidget(headTitle: widget.headtitle),
             ),
             Positioned(top: 60, right: 20, child: RefreshiconWidet()),
             Positioned(
               top: 110,
               left: 120,
-              child: PriceCryptoWidget(price: price.toString()),
+              child: PriceCryptoWidget(price: widget.price.toString()),
             ),
             Positioned(
               top: 150,
               left: 150,
               child: RateWidget(
-                rate: rate.toString(),
-                iconRate: Icon(Icons.arrow_drop_up_outlined),
+                rate: widget.rate.toString(),
+                iconRate: const Icon(Icons.arrow_drop_up_outlined),
               ),
             ),
             Positioned(
               top: 230,
               left: 10,
               right: 10,
-              child: CryptoLineChart(coinID: coinId),
+              child: CryptoLineChart(coinID: widget.coinId),
             ),
             Positioned(
               top: 700,
@@ -75,7 +100,7 @@ class DetailsScreenBody extends StatelessWidget {
               child: ButtonWidget(
                 colortext: sTextColorDetailsPage,
                 text: "Set Alert",
-                colorbutton: Color(0xffFAFBFB),
+                colorbutton: const Color(0xffFAFBFB),
               ),
             ),
             Positioned(
@@ -83,18 +108,25 @@ class DetailsScreenBody extends StatelessWidget {
               right: 50,
               child: ButtonWidget(
                 onPressed: () {
-                  // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
+               
                   context.read<FavoriteCubit>().addItem(
-                    ModelFavoritcoin(headtitle, price, imageUrl, rate),
+                    ModelFavoritcoin(
+                      widget.headtitle,
+                      widget.price,
+                      widget.imageUrl,
+                      widget.rate,
+                    ),
                   );
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       backgroundColor: pTextColorDetailsPage,
+                      showCloseIcon: true,
                       content: Text(
                         "Added to Favorite! You can visit Favorite page.",
                         style: Style.TextStyle18.copyWith(fontSize: 15),
                       ),
-                      duration: Duration(seconds: 2),
+                      duration: const Duration(seconds: 2),
                     ),
                   );
                 },
@@ -108,10 +140,10 @@ class DetailsScreenBody extends StatelessWidget {
               left: 20,
               right: 20,
               child: InfoCardWidget(
-                image: imageUrl,
-                namecoin: name,
-                lastprice: price,
-                rat: rate,
+                image: widget.imageUrl,
+                namecoin: widget.name,
+                lastprice: widget.price,
+                rat: widget.rate,
               ),
             ),
           ],
