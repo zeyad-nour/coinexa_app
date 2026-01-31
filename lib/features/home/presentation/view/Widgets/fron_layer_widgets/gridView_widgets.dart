@@ -1,5 +1,6 @@
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
+import 'package:coinexa_app/features/compare/presentation/view/compare_screen.dart';
 import 'package:coinexa_app/features/favorite/presentation/view/favorite_screen.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/view/convert_Coins.dart';
 import 'package:coinexa_app/features/home/presentation/view/Widgets/fron_layer_widgets/options_card_widgets.dart';
@@ -44,7 +45,17 @@ class GridviewWidgets extends StatelessWidget {
               title: "Favorite",
             ),
           ),
-          OptionsCardWidgets(imagename: AssetsData.compare, title: "Compare"),
+          InkWell(
+            onTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => CompareScreen()));
+            },
+            child: OptionsCardWidgets(
+              imagename: AssetsData.compare,
+              title: "Compare",
+            ),
+          ),
           InkWell(
             onTap: () {
               Navigator.of(
