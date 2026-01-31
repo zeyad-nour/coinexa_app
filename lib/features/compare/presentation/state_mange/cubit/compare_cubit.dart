@@ -12,16 +12,22 @@ class CompareCubit extends Cubit<CompareState> {
   void addCoin(CoinsModel coin) {
     if (!compareList.contains(coin)) {
       compareList.add(coin);
+      emit(CompareUpdated(List.from(compareList))); // تحديث الشاشة بعد كل إضافة
     }
 
-    // لما يبقى فيه عملتين، emit جاهزية للـ compare
     if (compareList.length == 2) {
-      emit(CompareReady(compareList));
+      emit(CompareReady(List.from(compareList)));
     }
   }
 
   void clear() {
     compareList.clear();
     emit(CompareInitial());
+  }
+
+  CoinsModel? getStrongestCoin() {
+    if (compareList.isEmpty) return null;
+    compareList.sort((a, b) => (b.priceChange24h ?? 0).compareTo(a.priceChange24h ?? 0));
+    return compareList.first;
   }
 }

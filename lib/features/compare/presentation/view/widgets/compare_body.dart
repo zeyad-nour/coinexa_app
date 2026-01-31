@@ -2,10 +2,12 @@
 
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/compare/presentation/view/widgets/background_compare.dart';
+import 'package:coinexa_app/features/compare/presentation/view/widgets/infoCardCompare.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:coinexa_app/features/compare/presentation/state_mange/cubit/compare_cubit.dart';
 import 'package:coinexa_app/features/home/data/Model/coins_model/coins_model.dart';
+import 'package:fl_chart/fl_chart.dart'; // لازم تضيف dependency في pubspec.yaml
 
 class CompareBody extends StatelessWidget {
   const CompareBody({super.key});
@@ -19,14 +21,13 @@ class CompareBody extends StatelessWidget {
           Positioned(
             top: 77,
             left: 20,
-            child: BackIconWidget(
-              color: Color(0xFF81D4FA).withOpacity(0.5),
-            ),
+            child: BackIconWidget(color: Color(0xFF81D4FA).withOpacity(0.5)),
           ),
           BlocBuilder<CompareCubit, CompareState>(
             builder: (context, state) {
-              final coins = context.watch<CompareCubit>().compareList;
-
+              List<CoinsModel> coins = [];
+              if (state is CompareUpdated) coins = state.coins;
+              if (state is CompareReady) coins = state.coins;
 
               if (coins.isEmpty) {
                 return Center(
@@ -36,6 +37,8 @@ class CompareBody extends StatelessWidget {
                   ),
                 );
               }
+
+              final strongest = context.read<CompareCubit>().getStrongestCoin();
 
               return Positioned(
                 top: 150,
@@ -48,22 +51,16 @@ class CompareBody extends StatelessWidget {
                     final coin = coins[index];
                     return Card(
                       color: Colors.blue.withOpacity(0.7),
-                      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      child: ListTile(
-                        leading: Image.network(
-                          coin.image??'',
-                          width: 40,
-                          height: 40,
-                        ),
-                        title: Text(
-                          coin.name??'unknown',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          "\$${coin.currentPrice?.toStringAsFixed(2)} | ${coin.priceChange24h?.toStringAsFixed(2)}%",
-                          style: TextStyle(color: Colors.white70),
-                        ),
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
                       ),
+                   child: Column(
+                     children: [
+                       Infocardcompare(coin: coin,strongest: strongest?.id??'',),
+                       
+                     ],
+                   ),
                     );
                   },
                 ),
