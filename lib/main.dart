@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+      
       providers: [
         BlocProvider<FavoriteCubit>(create: (context) => FavoriteCubit(Hive.box<ModelFavoritcoin>('favoriteBox'))),
         BlocProvider<HomeCubitCubit>(

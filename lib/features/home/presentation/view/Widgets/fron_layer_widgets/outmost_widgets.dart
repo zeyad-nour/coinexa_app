@@ -90,10 +90,13 @@ class _OutmostWidgetsState extends State<OutmostWidgets> {
                   return Center(child: Lodaingwidget());
                 } else if (state is HomeCubitFailure) {
                   return Center(
-                    child: Text(
-                      state.errorMessage,
-                      style: Style.TextStyle25.copyWith(
-                        color: dropDownRateColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        state.errorMessage,
+                        style: Style.TextStyle25.copyWith(
+                          color: dropDownRateColor,
+                        ),
                       ),
                     ),
                   );

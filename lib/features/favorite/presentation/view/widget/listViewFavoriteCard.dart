@@ -31,7 +31,7 @@ class Listviewfavoritecard extends StatelessWidget {
               barrierColor: Colors.black.withOpacity(0.3),
               borderSide: const BorderSide(
                 color: backgroundColorCalculate,
-                width: 2,
+                width: 1.5,
               ),
               width: MediaQuery.sizeOf(context).width * 0.87,
               buttonsBorderRadius: const BorderRadius.all(Radius.circular(2)),
@@ -47,8 +47,9 @@ class Listviewfavoritecard extends StatelessWidget {
                 color: Colors.white,
               ),
               showCloseIcon: true,
+              closeIcon: Icon(Icons.close, color: colorSelectIteamRange),
 
-              btnOkColor: backgroundColorCalculate.withOpacity(0.8),
+              btnOkColor: backgroundColorCalculate.withOpacity(0.6),
               btnOkOnPress: () {
                 context.read<FavoriteCubit>().deleteItem(index);
               },
