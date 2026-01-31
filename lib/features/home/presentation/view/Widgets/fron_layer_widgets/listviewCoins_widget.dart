@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_import, deprecated_member_use
+// ignore_for_file: unnecessary_import, deprecated_member_use, use_build_context_synchronously
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -84,7 +84,6 @@ class ListviewcoinsWidget extends StatelessWidget {
                 btnOkColor: compareColor.withOpacity(0.6),
 
                 btnOkOnPress: () {
-                  // أضف العملة للـ Cubit
                   final coin = CoinsModel(
                     id: coinsID,
                     name: title,
@@ -101,15 +100,23 @@ class ListviewcoinsWidget extends StatelessWidget {
                   if (compareCubit.compareList.length == 2) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => CompareScreen()),
+                      MaterialPageRoute(
+                        builder: (_) => BlocProvider.value(
+                          value: compareCubit,
+                          child: CompareScreen(),
+                        ),
+                      ),
                     );
-                    compareCubit.clear();
+
+                    // compareCubit.clear();
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
                           '$title added to comparison. Choose another coin.',
+                          style: Style.TextStyle18,
                         ),
+                        backgroundColor: compareColor.withOpacity(0.7),
                         duration: Duration(seconds: 2),
                       ),
                     );

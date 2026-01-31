@@ -1,4 +1,5 @@
 import 'package:coinexa_app/core/utils/api_serves.dart';
+import 'package:coinexa_app/features/compare/presentation/state_mange/cubit/compare_cubit.dart';
 import 'package:coinexa_app/features/convert_Coins/presentation/view/convert_Coins.dart';
 import 'package:coinexa_app/features/favorite/data/model/favoritcoin.dart';
 import 'package:coinexa_app/features/favorite/presentation/StateManage/cubit/favorite_cubit.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
               HomeCubitCubit(HomeRepoImplement(ApiServes(Dio())))
                 ..featchTrending(),
         ),
+        BlocProvider<CompareCubit>(create: (context)=>CompareCubit())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
