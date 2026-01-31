@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 
+import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/assets.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/core/utils/widgets/head_title_widget.dart';
@@ -23,7 +24,7 @@ class favoriteBody extends StatelessWidget {
         children: [
           CalculateBackgroundWidget(),
 
-          Positioned(top: 77, left: 20, child: BackIconWidget()),
+          Positioned(top: 77, left: 20, child: BackIconWidget(color: bacgroundIconButtom,)),
           Positioned(
             top: 460,
             left: 00,

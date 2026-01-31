@@ -67,7 +67,7 @@ class _DetailsScreenBodyState extends State<DetailsScreenBody> {
         body: Stack(
           children: [
             BackgrounPageDetails(),
-            Positioned(top: 60, left: 20, child: BackIconWidget()),
+            Positioned(top: 60, left: 20, child: BackIconWidget(color: bacgroundIconButtom,)),
             Positioned(
               top: 70,
               left: 100,

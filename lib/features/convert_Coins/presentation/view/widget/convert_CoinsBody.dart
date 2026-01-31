@@ -1,3 +1,4 @@
+import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/api_serves.dart';
 import 'package:coinexa_app/core/utils/widgets/refreshIcon_widet.dart';
 import 'package:coinexa_app/core/utils/widgets/styles.dart';
@@ -19,7 +20,7 @@ class ConvertCoinsbody extends StatelessWidget {
       body: Stack(
         children: [
           BachgroundConvert(),
-          Positioned(top: 100, left: 20, child: BackIconWidget()),
+          Positioned(top: 100, left: 20, child: BackIconWidget(color: bacgroundIconButtom,)),
           Positioned(top: 100, right: 20, child: RefreshiconWidet()),
           Positioned(
             top: 210,

@@ -2,13 +2,14 @@ import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/material.dart';
 
 class BackIconWidget extends StatelessWidget {
-  const BackIconWidget({super.key});
+  final Color color;
+  const BackIconWidget({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: bacgroundIconButtom,
+        color: color,
         borderRadius: BorderRadius.circular(100),
       ),
       width: 50,
