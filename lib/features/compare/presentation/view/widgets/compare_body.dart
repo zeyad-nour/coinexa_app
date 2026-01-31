@@ -1,7 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/back_icon_widget.dart';
 import 'package:coinexa_app/features/compare/presentation/view/widgets/background_compare.dart';
+import 'package:coinexa_app/features/compare/presentation/view/widgets/coinLineChart.dart';
 import 'package:coinexa_app/features/compare/presentation/view/widgets/infoCardCompare.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,17 +52,27 @@ class CompareBody extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final coin = coins[index];
                     return Card(
-                      color: Colors.blue.withOpacity(0.7),
+                      color: compareColor.withOpacity(0.7),
                       margin: EdgeInsets.symmetric(
                         horizontal: 20,
                         vertical: 10,
                       ),
-                   child: Column(
-                     children: [
-                       Infocardcompare(coin: coin,strongest: strongest?.id??'',),
-                       
-                     ],
-                   ),
+                      child: Column(
+                        children: [
+                          Infocardcompare(
+                            coin: coin,
+                            strongest: strongest?.id ?? '',
+                          ),
+                          SizedBox(height: 30),
+                          CoinLineChartHourly(
+                            prices: List.generate(
+                              coins.length,
+                              (i) =>
+                                  (coin.currentPrice ?? 0) * (0.9 + 0.02 * i),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
                   },
                 ),
