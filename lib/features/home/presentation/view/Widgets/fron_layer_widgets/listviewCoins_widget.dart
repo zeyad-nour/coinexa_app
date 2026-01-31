@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_import, deprecated_member_use
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:coinexa_app/conistant.dart';
 import 'package:coinexa_app/core/utils/widgets/lodaingWidget.dart';
@@ -22,7 +23,8 @@ class ListviewcoinsWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.praic,
-    required this.rate, required this.coinsID,
+    required this.rate,
+    required this.coinsID,
   });
 
   @override
@@ -39,10 +41,44 @@ class ListviewcoinsWidget extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) =>
-                    DetailsScreen(price: praic, rate: rate, headtitle: title,coinId: coinsID, imageUrl: imagecoin, name: title,),
+                builder: (_) => DetailsScreen(
+                  price: praic,
+                  rate: rate,
+                  headtitle: title,
+                  coinId: coinsID,
+                  imageUrl: imagecoin,
+                  name: title,
+                ),
               ),
             );
+          },
+          onLongPress: () {
+            AwesomeDialog(
+              context: context,
+              dialogType: .noHeader,
+              dialogBackgroundColor: compareColor.withOpacity(0.5),
+              barrierColor: Colors.black.withOpacity(0.3),
+              borderSide: const BorderSide(color: compareColor, width: 1.5),
+              width: MediaQuery.sizeOf(context).width * 0.87,
+              buttonsBorderRadius: const BorderRadius.all(Radius.circular(2)),
+              dismissOnTouchOutside: true,
+              dismissOnBackKeyPress: false,
+
+              headerAnimationLoop: false,
+              animType: AnimType.leftSlide,
+              btnOkText: "Yes",
+
+              desc: 'Do you want to compare this currency?',
+              descTextStyle: Style.priceCrypto_TextStyle.copyWith(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              showCloseIcon: true,
+              closeIcon: Icon(Icons.close, color: colorSelectIteamRange),
+
+              btnOkColor: compareColor.withOpacity(0.6),
+              btnOkOnPress: () {},
+            ).show();
           },
           child: ListTile(
             leading: ClipRRect(
@@ -59,7 +95,7 @@ class ListviewcoinsWidget extends StatelessWidget {
               ),
             ),
             title: Text(title, style: Style.TextStyle18.copyWith(fontSize: 18)),
-            subtitle: Text(subtitle),
+            subtitle: Row(children: [Text(subtitle)]),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

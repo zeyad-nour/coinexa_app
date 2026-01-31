@@ -17,3 +17,4 @@ const colorLinechartofgraph = Color(0xffF04086);
 const pTextColor = Color(0xff26273C);
 const pTextColorDetailsPage = Color(0xff191C32);
 const sTextColorDetailsPage = Color(0xff767DFF);
+const compareColor = Color(0xFF81D4FA);

@@ -1,4 +1,3 @@
-import 'package:coinexa_app/conistant.dart';
 import 'package:flutter/material.dart';
 
 class BackIconWidget extends StatelessWidget {
