@@ -44,26 +44,3 @@ class Infocardcompare extends StatelessWidget {
 
 
 
-  // SizedBox(
-  //           height: 100,
-  //           child: LineChart(
-  //             LineChartData(
-  //               gridData: FlGridData(show: false),
-  //               titlesData: FlTitlesData(show: false),
-  //               borderData: FlBorderData(show: false),
-  //               lineBarsData: [
-  //                 LineChartBarData(
-  //                   spots: List.generate(
-  //                     10,
-  //                     (i) => FlSpot(
-  //                       i.toDouble(),
-  //                       (coin.currentPrice ?? 0) * (0.9 + 0.02 * i),
-  //                     ),
-  //                   ),
-  //                   isCurved: true,
-  //                   barWidth: 3,
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //         ),

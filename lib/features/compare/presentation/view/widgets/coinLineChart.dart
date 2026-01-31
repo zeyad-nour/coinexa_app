@@ -1,8 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class CoinLineChartHourly extends StatelessWidget {
-  final List<double> prices; // قائمة الأسعار على مدار الساعة
+  final List<double> prices;
   final Color lineColor;
   final Color backgroundTopColor;
   final Color backgroundBottomColor;
@@ -17,7 +19,6 @@ class CoinLineChartHourly extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // إنشاء نقاط الرسم
     final spots = List.generate(
       prices.length,
       (i) => FlSpot(i.toDouble(), prices[i]),
@@ -29,8 +30,8 @@ class CoinLineChartHourly extends StatelessWidget {
         LineChartData(
           minX: 0,
           maxX: (prices.length - 1).toDouble(),
-          minY: prices.reduce((a, b) => a < b ? a : b) * 0.95, // أقل سعر -5% للتباعد
-          maxY: prices.reduce((a, b) => a > b ? a : b) * 1.05, // أعلى سعر +5% للتباعد
+          minY: prices.reduce((a, b) => a < b ? a : b) * 0.95, 
+          maxY: prices.reduce((a, b) => a > b ? a : b) * 1.05, 
           gridData: FlGridData(
             show: true,
             drawVerticalLine: true,
@@ -49,7 +50,6 @@ class CoinLineChartHourly extends StatelessWidget {
                 showTitles: true,
                 interval: 1,
                 getTitlesWidget: (value, meta) {
-                  // كل نقطة تمثل 5 دقائق
                   final minute = (value * 5).toInt();
                   return Padding(
                     padding: const EdgeInsets.only(top: 4),
