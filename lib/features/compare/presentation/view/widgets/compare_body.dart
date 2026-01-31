@@ -20,7 +20,7 @@ class CompareBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chartCubit = ChartMangeCubit(); // Cubit واحد لجميع العملات
+    final chartCubit = ChartMangeCubit();
     List<CoinsModel> coins = [];
     return Scaffold(
       body: Stack(
@@ -116,7 +116,7 @@ class CompareBody extends StatelessWidget {
                           dialogBackgroundColor: Colors.transparent,
                           barrierColor: Colors.black.withOpacity(0.3),
                           borderSide: const BorderSide(
-                            color: backgroundColorCalculate,
+                            color: Colors.red,
                             width: 1.5,
                           ),
                           width: MediaQuery.sizeOf(context).width * 0.87,
@@ -140,7 +140,7 @@ class CompareBody extends StatelessWidget {
                             color: colorSelectIteamRange,
                           ),
 
-                          btnOkColor: backgroundColorCalculate.withOpacity(0.6),
+                          btnOkColor: Colors.red.withOpacity(0.6),
                           btnOkOnPress: () {
                             context.read<CompareCubit>().removeIteam(index);
                           },
