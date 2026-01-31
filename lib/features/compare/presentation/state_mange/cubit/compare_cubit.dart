@@ -1,3 +1,5 @@
+// ignore_for_file: collection_methods_unrelated_type
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:coinexa_app/features/home/data/Model/coins_model/coins_model.dart';
@@ -32,13 +34,15 @@ class CompareCubit extends Cubit<CompareState> {
 
   CoinsModel? getStrongestCoin() {
     if (compareList.isEmpty) return null;
-    compareList.sort((a, b) => (b.priceChange24h ?? 0).compareTo(a.priceChange24h ?? 0));
+    compareList.sort(
+      (a, b) => (b.priceChange24h ?? 0).compareTo(a.priceChange24h ?? 0),
+    );
     return compareList.first;
   }
 
   void changeTimeFrame(TimeFrame tf, ChartMangeCubit chartCubit) {
     selectedTimeFrame = tf;
-    emit(CompareUpdated(List.from(compareList))); 
+    emit(CompareUpdated(List.from(compareList)));
     loadChartsForAllCoins(chartCubit);
   }
 
@@ -48,7 +52,10 @@ class CompareCubit extends Cubit<CompareState> {
       chartData.clear();
 
       for (var coin in compareList) {
-        await chartCubit.loadChart(coinId: coin.id!, timeFrame: selectedTimeFrame);
+        await chartCubit.loadChart(
+          coinId: coin.id!,
+          timeFrame: selectedTimeFrame,
+        );
 
         if (chartCubit.state is ChartMangeSuccess) {
           final points = (chartCubit.state as ChartMangeSuccess).points;
@@ -60,5 +67,10 @@ class CompareCubit extends Cubit<CompareState> {
     } catch (e) {
       emit(CompareChartError("Failed to load chart data"));
     }
+  }
+
+  void removeIteam(int index) {
+    compareList.removeAt(index);
+    emit(CompareUpdated(List.from(compareList)));
   }
 }
