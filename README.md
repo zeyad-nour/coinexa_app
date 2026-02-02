@@ -70,6 +70,8 @@ It also uses **Hive** for local storage to save favorite coins and user data off
 - Hive (Local Storage)
 - CoinGecko API
 - Charts & Data Visualization
+- flutter_launcher_icons (Custom App Icon)
+
 
 
 ---
