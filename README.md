@@ -1,4 +1,4 @@
-# 🎉 CoinExa - Cryptocurrency App
+# 🎉 CoinExa v1.0 - Cryptocurrency App 
 
 **CoinExa** is a modern Flutter application for tracking, converting, and analyzing cryptocurrency prices in real-time.  
 The app focuses on clean architecture, smooth user experience, and efficient performance.  
