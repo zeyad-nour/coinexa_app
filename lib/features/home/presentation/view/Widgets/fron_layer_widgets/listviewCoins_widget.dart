@@ -97,7 +97,7 @@ class ListviewcoinsWidget extends StatelessWidget {
                   final compareCubit = context.read<CompareCubit>();
                   compareCubit.addCoin(coin);
 
-                  if (compareCubit.compareList.length == 2) {
+                  if (compareCubit.compareList.length >= 2) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
