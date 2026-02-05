@@ -153,6 +153,7 @@ class ListviewcoinsWidget extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  
                   child: Text(
                     "${rate.toStringAsFixed(2)}%",
                     style: TextStyle(
